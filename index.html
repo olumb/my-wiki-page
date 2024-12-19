@@ -33,6 +33,14 @@
         }
         main {
             padding: 20px;
+
+<main>
+    <h2>Welcome to My Wiki Site</h2>
+    <input type="text" id="searchBox" placeholder="Search this site..." onkeyup="searchContent()">
+    <div id="searchResults"></div>
+    <p>This is a basic wiki-style website inspired by Mosaic Industries. You can add more content here!</p>
+</main>
+
         }
         footer {
             background: #333;
@@ -52,6 +60,19 @@
             padding: 10px;
         }
     }
+#searchBox {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#searchResults {
+    margin-top: 10px;
+    color: #4CAF50;
+    font-weight: bold;
+}
 
     </style>
 </head>
@@ -59,6 +80,19 @@
     <header>
         <h1>Welcome to My Wiki Site</h1>
     </header>
+<script>
+    function searchContent() {
+        const input = document.getElementById('searchBox').value.toLowerCase();
+        const content = document.body.innerText.toLowerCase();
+        const resultsDiv = document.getElementById('searchResults');
+        resultsDiv.innerHTML = '';
+
+        if (input) {
+            const results = content.includes(input) ? `Results found for "${input}"` : 'No results found';
+            resultsDiv.innerHTML = `<p>${results}</p>`;
+        }
+    }
+</script>
 
 <nav>
     <ul>
