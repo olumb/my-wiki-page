@@ -58,6 +58,10 @@
             margin: 20px 0;
         }
     </style>
+    <!-- Prism.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 </head>
 <body>
     <header>
@@ -77,8 +81,13 @@
             <p>Welcome to the home page of our wiki site. Here you can find all information about embedded systems.</p>
         </article>
         <article>
-            <h2>Getting Started</h2>
-            <p>This section will help you get started with using this site effectively.</p>
+            <h2>Code Example</h2>
+            <pre><code class="language-javascript">
+function helloWorld() {
+    console.log("Hello, World!");
+}
+helloWorld();
+            </code></pre>
         </article>
     </main>
     <footer>
