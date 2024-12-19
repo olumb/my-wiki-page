@@ -41,7 +41,6 @@
             padding: 10px 0;
             margin-top: 20px;
         }
-        /* Mobil Uyumlu Stil */
         @media (max-width: 600px) {
             nav ul li {
                 display: block;
@@ -51,7 +50,6 @@
                 padding: 10px;
             }
         }
-        /* Arama Kutusu Stili */
         #searchBox {
             width: 100%;
             max-width: 400px;
@@ -66,6 +64,10 @@
             font-weight: bold;
         }
     </style>
+    <!-- Prism.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
+    <!-- Prism.js JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 </head>
 <body>
     <header>
@@ -82,7 +84,13 @@
         <h2>Welcome to My Wiki Site</h2>
         <input type="text" id="searchBox" placeholder="Search this site..." onkeyup="searchContent()">
         <div id="searchResults"></div>
-        <p>This is a basic wiki-style website inspired by Mosaic Industries. You can add more content here!</p>
+        <h2>Code Example</h2>
+        <pre><code class="language-javascript">
+function helloWorld() {
+    console.log("Hello, World!");
+}
+helloWorld();
+        </code></pre>
     </main>
     <footer>
         <p>&copy; 2024 My Wiki Site</p>
