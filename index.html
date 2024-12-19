@@ -33,14 +33,6 @@
         }
         main {
             padding: 20px;
-
-<main>
-    <h2>Welcome to My Wiki Site</h2>
-    <input type="text" id="searchBox" placeholder="Search this site..." onkeyup="searchContent()">
-    <div id="searchResults"></div>
-    <p>This is a basic wiki-style website inspired by Mosaic Industries. You can add more content here!</p>
-</main>
-
         }
         footer {
             background: #333;
@@ -49,73 +41,64 @@
             padding: 10px 0;
             margin-top: 20px;
         }
-
-    /* Mobil Uyumlu Stil */
-    @media (max-width: 600px) {
-        nav ul li {
-            display: block;
-            margin: 10px 0;
+        /* Mobil Uyumlu Stil */
+        @media (max-width: 600px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+            main {
+                padding: 10px;
+            }
         }
-        main {
+        /* Arama Kutusu Stili */
+        #searchBox {
+            width: 100%;
+            max-width: 400px;
             padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
         }
-    }
-#searchBox {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    margin: 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-#searchResults {
-    margin-top: 10px;
-    color: #4CAF50;
-    font-weight: bold;
-}
-
+        #searchResults {
+            margin-top: 10px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Welcome to My Wiki Site</h1>
     </header>
-<script>
-    function searchContent() {
-        const input = document.getElementById('searchBox').value.toLowerCase();
-        const content = document.body.innerText.toLowerCase();
-        const resultsDiv = document.getElementById('searchResults');
-        resultsDiv.innerHTML = '';
-
-        if (input) {
-            const results = content.includes(input) ? `Results found for "${input}"` : 'No results found';
-            resultsDiv.innerHTML = `<p>${results}</p>`;
-        }
-    }
-</script>
-
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-    </ul>
-</nav>
-
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
     <main>
-        <h2>Getting Started</h2>
+        <h2>Welcome to My Wiki Site</h2>
+        <input type="text" id="searchBox" placeholder="Search this site..." onkeyup="searchContent()">
+        <div id="searchResults"></div>
         <p>This is a basic wiki-style website inspired by Mosaic Industries. You can add more content here!</p>
     </main>
     <footer>
         <p>&copy; 2024 My Wiki Site</p>
     </footer>
+    <script>
+        function searchContent() {
+            const input = document.getElementById('searchBox').value.toLowerCase();
+            const content = document.body.innerText.toLowerCase();
+            const resultsDiv = document.getElementById('searchResults');
+            resultsDiv.innerHTML = '';
+
+            if (input) {
+                const results = content.includes(input) ? `Results found for "${input}"` : 'No results found';
+                resultsDiv.innerHTML = `<p>${results}</p>`;
+            }
+        }
+    </script>
 </body>
 </html>
-
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
-</nav>
