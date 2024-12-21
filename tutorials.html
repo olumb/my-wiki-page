@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - My Wiki Site</title>
+    <title>Tutorials - My Wiki Site</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -54,64 +54,31 @@
             color: #4CAF50;
             font-weight: bold;
         }
-        /* Mobil Uyumlu Stil */
-        @media (max-width: 600px) {
-            nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
-            main {
-                padding: 10px;
-            }
-        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Contact Us</h1>
+        <h1>Tutorials</h1>
     </header>
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="contact.html">Contact</a></li>
-			<li><a href="tutorials.html">Tutorials</a></li>
-			<li><a href="projects.html">Projects</a></li>
-			<li><a href="resources.html">Resources</a></li>
+            <li><a href="tutorials.html">Tutorials</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="resources.html">Resources</a></li>
         </ul>
     </nav>
     <main>
-        <h2>Contact Information</h2>
+        <h2>Step-by-Step Tutorials</h2>
         <input type="text" id="searchBox" placeholder="Search the site..." onkeyup="performSearch()">
         <div id="searchResults"></div>
-        <p>If you have any questions or suggestions, feel free to reach out:</p>
-        <ul>
-            <li>Email: mywiki@example.com</li>
-            <li>Phone: +123 456 7890</li>
-            <li>Address: 123 Wiki Lane, Knowledge City</li>
-        </ul>
+        <p>Welcome to the Tutorials section. Here, you can find step-by-step guides for various topics related to embedded systems.</p>
     </main>
     <footer>
         <p>&copy; 2024 My Wiki Site</p>
     </footer>
 
     <script src="search.js"></script>
-    <script>
-        function performSearch() {
-            const query = document.getElementById('searchBox').value.trim();
-            const results = searchSite(query);
-            const resultsDiv = document.getElementById('searchResults');
-            resultsDiv.innerHTML = "";
-
-            if (query && results.length > 0) {
-                results.forEach(result => {
-                    const link = `<a href="${result.page}" target="_blank">${result.title}</a>`;
-                    resultsDiv.innerHTML += `<p>${link}</p>`;
-                });
-            } else if (query) {
-                resultsDiv.innerHTML = "<p>No results found.</p>";
-            }
-        }
-    </script>
-</body>
-</html>
+    <
