@@ -13,18 +13,26 @@
             background-color: #f5f5f5;
         }
 
-        /* Üst Banner */
+        /* Üst Header */
         #header {
             background: linear-gradient(90deg, #003366, #00509e);
             color: white;
-            padding: 20px;
-            text-align: center;
+            padding: 15px 10px; /* 5 mm kısaltıldı */
+            text-align: left;
             position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        #header img {
+            height: 40px; /* Resim boyutu */
+            margin-right: 10px;
+            background: transparent; /* Opak görünüm */
         }
 
         #header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 1.8em;
         }
 
         #header h2 {
@@ -35,7 +43,7 @@
         /* Arama Çubuğu */
         #search-bar {
             position: absolute;
-            top: 20px;
+            top: 10px;
             right: 20px;
         }
 
@@ -68,13 +76,13 @@
             background-color: #003366;
             color: white;
             padding: 5px;
-            cursor: pointer;
             border-radius: 5px;
+            cursor: pointer;
         }
 
         .section-content {
             padding: 10px;
-            display: none; /* Başlangıçta kapalı */
+            display: block; /* Paneller başlangıçta açık */
             background-color: #ffffff;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -108,21 +116,13 @@
         h1, h2 {
             color: #003366;
         }
-
-        /* Sağ Panel */
-        #right-panel {
-            width: 20%;
-            padding: 10px;
-            background-color: #f9f9f9;
-            border-left: 1px solid #ccc;
-        }
     </style>
 </head>
 <body>
     <!-- Üst Header -->
     <div id="header">
+        <img src="Icon.png" alt="Logo">
         <h1>Custom Mosaic Style Site</h1>
-        <h2>For Aerospace & Automotive</h2>
         <div id="search-bar">
             <input type="text" id="search-box" placeholder="Search...">
         </div>
@@ -133,7 +133,7 @@
         <!-- Sol Panel -->
         <div id="sidebar">
             <div class="section">
-                <div class="section-header" onclick="toggleSection('navigation')">Navigation</div>
+                <div class="section-header">Navigation</div>
                 <div class="section-content" id="navigation">
                     <ul>
                         <li><a href="#">Home</a></li>
@@ -146,7 +146,7 @@
                 </div>
             </div>
             <div class="section">
-                <div class="section-header" onclick="toggleSection('quick-links')">Quick Links</div>
+                <div class="section-header">Quick Links</div>
                 <div class="section-content" id="quick-links">
                     <ul>
                         <li><a href="#">Documentation</a></li>
@@ -156,7 +156,7 @@
                 </div>
             </div>
             <div class="section">
-                <div class="section-header" onclick="toggleSection('tags')">Tags</div>
+                <div class="section-header">Tags</div>
                 <div class="section-content" id="tags">
                     <span>Microcontroller</span>
                     <span>Embedded Systems</span>
@@ -172,27 +172,6 @@
             <h1>Main Content</h1>
             <p>This area is reserved for main content. You can add your documentation, tutorials, and guides here.</p>
         </div>
-
-        <!-- Sağ Panel -->
-        <div id="right-panel">
-            <h2>Help & Support</h2>
-            <ul>
-                <li><a href="#">Navigating Documentation</a></li>
-                <li><a href="#">Exporting as PDF</a></li>
-                <li><a href="#">Contact Support</a></li>
-            </ul>
-        </div>
     </div>
-
-    <script>
-        function toggleSection(id) {
-            const section = document.getElementById(id);
-            if (section.style.display === "none" || section.style.display === "") {
-                section.style.display = "block";
-            } else {
-                section.style.display = "none";
-            }
-        }
-    </script>
 </body>
 </html>
