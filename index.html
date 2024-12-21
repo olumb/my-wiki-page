@@ -179,6 +179,11 @@
         .panel-content ul ul.open {
             display: block; /* Açılan alt klasörler */
         }
+
+        hr {
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
@@ -207,6 +212,16 @@
                 </div>
                 <div class="panel-content">
                     <ul>
+                        <!-- DocWeb Home Page Section -->
+                        <li>
+                            <i class="fas fa-folder"></i> DocWeb Home Page
+                            <ul>
+                                <li><i class="fas fa-file"></i> Using this DocWeb</li>
+                            </ul>
+                        </li>
+                        <hr> <!-- Çizgi ile ayırma -->
+
+                        <!-- Main Folder 1 -->
                         <li onclick="toggleFolder(this)">
                             <i class="fas fa-folder"></i> Main Folder 1
                             <ul>
@@ -221,6 +236,8 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <!-- Main Folder 2 -->
                         <li onclick="toggleFolder(this)">
                             <i class="fas fa-folder"></i> Main Folder 2
                             <ul>
@@ -228,6 +245,8 @@
                                 <li><i class="fas fa-file"></i> File 2.2</li>
                             </ul>
                         </li>
+
+                        <!-- File 3 -->
                         <li><i class="fas fa-file"></i> File 3</li>
                     </ul>
                 </div>
