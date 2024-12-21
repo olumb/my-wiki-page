@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quick Links Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Genel Stil Ayarları */
         body {
@@ -64,9 +65,10 @@
             align-items: center;
         }
 
-        .panel-content ul li img {
+        .panel-content ul li i {
             margin-right: 10px;
-            height: 20px; /* İkon boyutu */
+            font-size: 18px; /* İkon boyutu */
+            color: #003366;
         }
 
         .panel-content ul li a {
@@ -90,15 +92,15 @@
         <!-- Panel İçerik -->
         <div class="panel-content">
             <ul>
-                <li><img src="icon1.png" alt="Icon"><a href="#">Documentation home page</a></li>
-                <li><img src="icon2.png" alt="Icon"><a href="#">Ask questions/comment</a></li>
-                <li><img src="icon3.png" alt="Icon"><a href="#">Frequently asked questions</a></li>
-                <li><img src="icon4.png" alt="Icon"><a href="#">Report bugs</a></li>
-                <li><img src="icon5.png" alt="Icon"><a href="#">Using this Doc Web</a></li>
-                <li><img src="icon6.png" alt="Icon"><a href="#">Mosaic Industries web site</a></li>
-                <li><img src="icon7.png" alt="Icon"><a href="#">About Mosaic Industries</a></li>
-                <li><img src="icon8.png" alt="Icon"><a href="#">Contact us</a></li>
-                <li><img src="icon9.png" alt="Icon"><a href="#">Help!</a></li>
+                <li><i class="fas fa-book"></i><a href="#">Documentation home page</a></li>
+                <li><i class="fas fa-comment"></i><a href="#">Ask questions/comment</a></li>
+                <li><i class="fas fa-question-circle"></i><a href="#">Frequently asked questions</a></li>
+                <li><i class="fas fa-bug"></i><a href="#">Report bugs</a></li>
+                <li><i class="fas fa-tools"></i><a href="#">Using this Doc Web</a></li>
+                <li><i class="fas fa-industry"></i><a href="#">Mosaic Industries web site</a></li>
+                <li><i class="fas fa-info-circle"></i><a href="#">About Mosaic Industries</a></li>
+                <li><i class="fas fa-envelope"></i><a href="#">Contact us</a></li>
+                <li><i class="fas fa-life-ring"></i><a href="#">Help!</a></li>
             </ul>
         </div>
     </div>
