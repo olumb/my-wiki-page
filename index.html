@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mosaic-Style Layout</title>
+    <title>OLUMB Control System Design</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,32 +12,40 @@
             background-color: #f5f5f5;
         }
 
-        /* Üst Banner */
-        #top-banner {
-            background-color: #003366;
+        /* Üst Header */
+        #header {
+            background: linear-gradient(90deg, #003366, #00509e);
             color: white;
-            padding: 10px;
+            padding: 20px 10px;
             text-align: center;
+            position: relative;
         }
 
-        #top-banner h1 {
+        #header h1 {
+            font-size: 2.5em;
             margin: 0;
-            font-size: 1.5em;
         }
 
-        /* Search Bar */
+        #header h2 {
+            font-size: 1.2em;
+            margin: 5px 0 0 0;
+        }
+
+        /* Arama Çubuğu */
         #search-bar {
             position: absolute;
-            top: 10px;
-            right: 10px;
+            top: 20px;
+            right: 20px;
         }
 
         #search-box {
             padding: 5px;
             border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 1em;
         }
 
+        /* Ana Konteyner */
         #container {
             display: flex;
         }
@@ -112,9 +120,10 @@
     </style>
 </head>
 <body>
-    <!-- Üst Banner -->
-    <div id="top-banner">
-        <h1>Mosaic Documentation Web</h1>
+    <!-- Üst Header -->
+    <div id="header">
+        <h1>OLUMB Control System Design</h1>
+        <h2>For Aerospace & Automotive</h2>
         <div id="search-bar">
             <input type="text" id="search-box" placeholder="Search...">
         </div>
@@ -161,7 +170,7 @@
 
         <!-- Orta İçerik -->
         <div id="content">
-            <h1>Welcome to the Mosaic Documentation Web</h1>
+            <h1>Welcome to the OLUMB Documentation Web</h1>
             <p>This is the main content area where detailed documentation, guides, and resources will be displayed. Use the navigation menu on the left to explore different sections.</p>
         </div>
     </div>
