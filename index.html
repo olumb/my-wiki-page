@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quick Links Panel</title>
+    <title>Complete Panel Layout</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Genel Stil Ayarları */
@@ -29,6 +29,7 @@
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
             box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
+            margin-bottom: 20px;
         }
 
         .panel-header {
@@ -79,17 +80,54 @@
         .panel-content ul li a:hover {
             text-decoration: underline;
         }
+
+        .tags-content span {
+            display: inline-block;
+            background-color: #cce5ff;
+            color: #003366;
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
-    <!-- Sol Panel -->
-    <div class="panel" id="quick-links-panel">
-        <!-- Panel Başlık -->
-        <div class="panel-header" onclick="togglePanel('quick-links-panel')">
-            Quick Links
-            <span class="toggle-icon" id="toggle-icon">▼</span>
+    <!-- Üst Panel -->
+    <div class="panel" id="header-panel">
+        <div class="panel-header">
+            OLUMB Control Systems
+            <span class="toggle-icon" onclick="togglePanel('header-panel')">▼</span>
         </div>
-        <!-- Panel İçerik -->
+        <div class="panel-content">
+            <h2>Control System Design for Aerospace & Automotive</h2>
+        </div>
+    </div>
+
+    <!-- Navigation Panel -->
+    <div class="panel" id="navigation-panel">
+        <div class="panel-header">
+            Navigation
+            <span class="toggle-icon" onclick="togglePanel('navigation-panel')">▼</span>
+        </div>
+        <div class="panel-content">
+            <ul>
+                <li><i class="fas fa-home"></i><a href="#">Home</a></li>
+                <li><i class="fas fa-info-circle"></i><a href="#">About</a></li>
+                <li><i class="fas fa-envelope"></i><a href="#">Contact</a></li>
+                <li><i class="fas fa-book"></i><a href="#">Tutorials</a></li>
+                <li><i class="fas fa-project-diagram"></i><a href="#">Projects</a></li>
+                <li><i class="fas fa-cogs"></i><a href="#">Resources</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Quick Links Panel -->
+    <div class="panel" id="quick-links-panel">
+        <div class="panel-header">
+            Quick Links
+            <span class="toggle-icon" onclick="togglePanel('quick-links-panel')">▼</span>
+        </div>
         <div class="panel-content">
             <ul>
                 <li><i class="fas fa-book"></i><a href="#">Documentation home page</a></li>
@@ -102,6 +140,22 @@
                 <li><i class="fas fa-envelope"></i><a href="#">Contact us</a></li>
                 <li><i class="fas fa-life-ring"></i><a href="#">Help!</a></li>
             </ul>
+        </div>
+    </div>
+
+    <!-- Tags Panel -->
+    <div class="panel" id="tags-panel">
+        <div class="panel-header">
+            Tags
+            <span class="toggle-icon" onclick="togglePanel('tags-panel')">▼</span>
+        </div>
+        <div class="panel-content tags-content">
+            <span>Microcontroller</span>
+            <span>Embedded Systems</span>
+            <span>Programming</span>
+            <span>IoT</span>
+            <span>Automation</span>
+            <span>Data Acquisition</span>
         </div>
     </div>
 
