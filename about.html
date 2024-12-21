@@ -67,6 +67,8 @@
     </nav>
     <main>
         <h2>About This Site</h2>
+	<input type="text" id="searchBox" placeholder="Search the site..." onkeyup="performSearch()">
+	<div id="searchResults"></div>
         <img src="https://via.placeholder.com/600x300" alt="About Image">
         <p>This wiki-style site was inspired by Mosaic Industries. It is designed to provide information about embedded systems and microcontrollers.</p>
         
@@ -86,5 +88,25 @@
     <footer>
         <p>&copy; 2024 My Wiki Site</p>
     </footer>
+
+<script src="search.js"></script>
+<script>
+    function performSearch() {
+        const query = document.getElementById('searchBox').value;
+        const results = searchSite(query);
+        const resultsDiv = document.getElementById('searchResults');
+        resultsDiv.innerHTML = "";
+
+        if (query && results.length > 0) {
+            results.forEach(result => {
+                const link = `<a href="${result.page}">${result.title}</a>`;
+                resultsDiv.innerHTML += `<p>${link}</p>`;
+            });
+        } else if (query) {
+            resultsDiv.innerHTML = "<p>No results found.</p>";
+        }
+    }
+</script>
+
 </body>
 </html>

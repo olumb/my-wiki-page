@@ -66,6 +66,8 @@
     </nav>
     <main>
         <h2>Contact Information</h2>
+	<input type="text" id="searchBox" placeholder="Search the site..." onkeyup="performSearch()">
+	<div id="searchResults"></div>
         <p>If you have any questions or suggestions, feel free to reach out:</p>
         <ul>
             <li>Email: mywiki@example.com</li>
@@ -76,5 +78,25 @@
     <footer>
         <p>&copy; 2024 My Wiki Site</p>
     </footer>
+
+<script src="search.js"></script>
+<script>
+    function performSearch() {
+        const query = document.getElementById('searchBox').value;
+        const results = searchSite(query);
+        const resultsDiv = document.getElementById('searchResults');
+        resultsDiv.innerHTML = "";
+
+        if (query && results.length > 0) {
+            results.forEach(result => {
+                const link = `<a href="${result.page}">${result.title}</a>`;
+                resultsDiv.innerHTML += `<p>${link}</p>`;
+            });
+        } else if (query) {
+            resultsDiv.innerHTML = "<p>No results found.</p>";
+        }
+    }
+</script>
+
 </body>
 </html>
