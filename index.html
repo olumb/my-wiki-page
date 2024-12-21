@@ -125,6 +125,7 @@
 
         .panel-content ul li {
             margin: 5px 0;
+            cursor: pointer;
         }
 
         .panel-content ul li i {
@@ -147,6 +148,10 @@
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        h1, h2, p {
+            color: #003366;
         }
     </style>
 </head>
@@ -183,13 +188,17 @@
                         <hr> <!-- Çizgi ile ayırma -->
 
                         <!-- Process Control -->
-                        <li onclick="toggleFolder(this)">
-                            <i class="fas fa-folder-open"></i> Process Control
-                            <ul class="open">
+                        <li>
+                            <span onclick="toggleFolder(this)">
+                                <i class="fas fa-plus"></i> Process Control
+                            </span>
+                            <ul>
                                 <!-- Chapter 1 -->
-                                <li onclick="toggleFolder(this)">
-                                    <i class="fas fa-folder-open"></i> Chapter 1. Introduction
-                                    <ul class="open">
+                                <li>
+                                    <span onclick="toggleFolder(this)">
+                                        <i class="fas fa-plus"></i> Chapter 1. Introduction
+                                    </span>
+                                    <ul>
                                         <li><a href="process_control/chapter1_1.html"><i class="fas fa-file"></i> 1.1 Introduction</a></li>
                                         <li><a href="#"><i class="fas fa-file"></i> 1.2 Instrumentation</a></li>
                                         <li><a href="#"><i class="fas fa-file"></i> 1.3 Process Models and Dynamic Behaviour</a></li>
@@ -272,25 +281,20 @@
         }
 
         function toggleFolder(folderElement) {
-            const subList = folderElement.querySelector('ul');
+            const subList = folderElement.nextElementSibling;
             const icon = folderElement.querySelector('i');
 
             if (subList) {
                 if (subList.classList.contains('open')) {
                     subList.classList.remove('open');
-                    icon.classList.remove('fa-folder-open');
-                    icon.classList.add('fa-folder');
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
                 } else {
                     subList.classList.add('open');
-                    icon.classList.remove('fa-folder');
-                    icon.classList.add('fa-folder-open');
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
                 }
             }
-        }
-
-        function loadContent(section) {
-            const dynamicContent = document.getElementById("dynamic-content");
-            dynamicContent.innerHTML = `<h2>${section}</h2><p>Content for ${section} will be added here.</p>`;
         }
     </script>
 </body>
