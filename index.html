@@ -12,24 +12,25 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* Üst panel yukarıda */
             background-color: #f5f5f5;
         }
 
         /* Üst Panel */
         #header {
-            background: linear-gradient(90deg, #357ABD, #5A86C8);
+            background: linear-gradient(90deg, #357ABD, #5A86C8); /* Gradyan renk */
             color: white;
             padding: 20px 10px;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: space-between;
             border-bottom: 2px solid black;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
         }
 
         #header img {
-            height: 50px;
+            height: 50px; /* Logo boyutu */
             margin-right: 10px;
         }
 
@@ -63,7 +64,7 @@
         /* Arama Çubuğu */
         #search-bar {
             position: absolute;
-            top: 40px;
+            top: 40px; /* Tarih saat ile çakışmayı engellemek için biraz aşağı alındı */
             right: 20px;
         }
 
@@ -77,40 +78,68 @@
         /* Ana Konteyner */
         #main-container {
             display: flex;
+            flex-direction: row;
+            flex: 1;
             padding: 10px;
             gap: 10px;
         }
 
-        /* Sol Paneller */
+        /* Sol Paneller Konteyner */
         #side-panels {
-            width: 18%;
+            width: 18%; /* 1 cm daraltıldı */
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 10px; /* Paneller arasındaki boşluk */
         }
 
-        /* Panel Yapı */
+        /* Panel Genel Yapı */
         .panel {
             background-color: #e6f2ff;
             border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            resize: vertical; /* Flexbox ile aşağı doğru uzatılabilir */
+            overflow: auto;
+            max-height: 300px; /* Maksimum yükseklik */
+            min-height: 100px; /* Minimum yükseklik */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
         }
 
         .panel-header {
             background-color: #003366;
             color: white;
             padding: 5px;
-            border-radius: 10px 10px 0 0;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            cursor: pointer;
+        }
+
+        .panel-header .toggle-icon {
+            font-size: 12px;
+            color: white;
+            cursor: pointer;
         }
 
         .panel-content {
             padding: 10px;
-            max-height: 300px;
-            overflow-y: auto;
+            display: block; /* Başlangıçta açık */
+        }
+
+        .tags-content span {
+            display: inline-block;
+            background-color: #cce5ff;
+            color: #003366;
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
         }
 
         /* İçerik Alanı */
@@ -119,22 +148,36 @@
             padding: 20px;
             background-color: #ffffff;
             border-radius: 10px;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
+            min-height: 600px; /* İçerik için daha fazla alan */
         }
 
-        /* Navigation Panel Stil */
+        h1, h2, p {
+            color: #003366;
+        }
+
+        /* Navigation Panel İçin Yeni Stil */
         .panel-content ul {
             list-style: none;
-            padding: 0;
+            padding-left: 10px;
         }
 
         .panel-content ul li {
             margin: 5px 0;
+            cursor: pointer;
         }
 
         .panel-content ul li i {
             margin-right: 10px;
             color: #003366;
+        }
+
+        .panel-content ul ul {
+            display: none; /* Alt klasör başlangıçta gizli */
+        }
+
+        .panel-content ul ul.open {
+            display: block; /* Açılan alt klasörler */
         }
 
         hr {
@@ -165,59 +208,90 @@
             <div class="panel" id="navigation-panel">
                 <div class="panel-header">
                     Navigation
+                    <span class="toggle-icon" onclick="togglePanel('navigation-panel')">▼</span>
                 </div>
                 <div class="panel-content">
                     <ul>
-                        <li>
+                        <!-- DocWeb Home Page Section -->
+                        <li onclick="loadContent('docweb')">
                             <i class="fas fa-folder"></i> DocWeb Home Page
-                            <ul>
-                                <li><i class="fas fa-file"></i> Using this DocWeb</li>
-                            </ul>
                         </li>
-                        <hr>
-                        <li>
+                        <hr> <!-- Çizgi ile ayırma -->
+
+                        <!-- Main Folder 1 -->
+                        <li onclick="toggleFolder(this)">
                             <i class="fas fa-folder"></i> Main Folder 1
                             <ul>
                                 <li><i class="fas fa-file"></i> File 1.1</li>
                                 <li><i class="fas fa-file"></i> File 1.2</li>
+                                <li onclick="toggleFolder(this)">
+                                    <i class="fas fa-folder"></i> Sub Folder 1.3
+                                    <ul>
+                                        <li><i class="fas fa-file"></i> File 1.3.1</li>
+                                        <li><i class="fas fa-file"></i> File 1.3.2</li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
-                        <li>
+
+                        <!-- Main Folder 2 -->
+                        <li onclick="toggleFolder(this)">
                             <i class="fas fa-folder"></i> Main Folder 2
                             <ul>
                                 <li><i class="fas fa-file"></i> File 2.1</li>
+                                <li><i class="fas fa-file"></i> File 2.2</li>
                             </ul>
                         </li>
+
+                        <!-- File 3 -->
                         <li><i class="fas fa-file"></i> File 3</li>
                     </ul>
                 </div>
             </div>
-        </div>
 
-        <!-- Sağdaki İçerik -->
-        <div id="content">
-            <div class="panel">
+            <!-- Quick Links Panel -->
+            <div class="panel" id="quick-links-panel">
                 <div class="panel-header">
-                    Navigation (Content)
+                    Quick Links
+                    <span class="toggle-icon" onclick="togglePanel('quick-links-panel')">▼</span>
                 </div>
                 <div class="panel-content">
                     <ul>
-                        <li>
-                            <i class="fas fa-folder"></i> Main Folder 1
-                            <ul>
-                                <li><i class="fas fa-file"></i> File 1.1</li>
-                                <li><i class="fas fa-file"></i> File 1.2</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <i class="fas fa-folder"></i> Main Folder 2
-                            <ul>
-                                <li><i class="fas fa-file"></i> File 2.1</li>
-                            </ul>
-                        </li>
-                        <li><i class="fas fa-file"></i> File 3</li>
+                        <li><i class="fas fa-book"></i><a href="#">Documentation home page</a></li>
+                        <li><i class="fas fa-comment"></i><a href="#">Ask questions/comment</a></li>
+                        <li><i class="fas fa-question-circle"></i><a href="#">Frequently asked questions</a></li>
+                        <li><i class="fas fa-bug"></i><a href="#">Report bugs</a></li>
+                        <li><i class="fas fa-tools"></i><a href="#">Using this Doc Web</a></li>
+                        <li><i class="fas fa-industry"></i><a href="#">Mosaic Industries web site</a></li>
+                        <li><i class="fas fa-info-circle"></i><a href="#">About Mosaic Industries</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="#">Contact us</a></li>
+                        <li><i class="fas fa-life-ring"></i><a href="#">Help!</a></li>
                     </ul>
                 </div>
+            </div>
+
+            <!-- Tags Panel -->
+            <div class="panel" id="tags-panel">
+                <div class="panel-header">
+                    Tags
+                    <span class="toggle-icon" onclick="togglePanel('tags-panel')">▼</span>
+                </div>
+                <div class="panel-content tags-content">
+                    <span>Microcontroller</span>
+                    <span>Embedded Systems</span>
+                    <span>Programming</span>
+                    <span>IoT</span>
+                    <span>Automation</span>
+                    <span>Data Acquisition</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- İçerik Alanı -->
+        <div id="content">
+            <h1>Welcome to OLUMB Control Systems</h1>
+            <div id="dynamic-content">
+                <p>This is the main content area. Here you can add your documentation, tutorials, guides, or any other content.</p>
             </div>
         </div>
     </div>
@@ -225,11 +299,57 @@
     <script>
         function updateDateTime() {
             const now = new Date();
-            document.getElementById('datetime').innerText = now.toDateString() + " " + now.toLocaleTimeString();
+            const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+            document.getElementById('datetime').innerText = now.toLocaleDateString('en-US', options);
         }
 
-        setInterval(updateDateTime, 1000);
         updateDateTime();
+        setInterval(updateDateTime, 60000); // Dakikada bir güncelle
+
+        function togglePanel(panelId) {
+            const panel = document.getElementById(panelId);
+            const content = panel.querySelector('.panel-content');
+            const icon = panel.querySelector('.toggle-icon');
+
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                icon.textContent = "▼"; // Açıkken aşağı ok
+            } else {
+                content.style.display = "none";
+                icon.textContent = "▲"; // Kapalıyken yukarı ok
+            }
+        }
+
+        function toggleFolder(folderElement) {
+            const subList = folderElement.querySelector('ul');
+            const icon = folderElement.querySelector('i');
+
+            if (subList) {
+                if (subList.classList.contains('open')) {
+                    subList.classList.remove('open');
+                    icon.classList.remove('fa-folder-open');
+                    icon.classList.add('fa-folder');
+                } else {
+                    subList.classList.add('open');
+                    icon.classList.remove('fa-folder');
+                    icon.classList.add('fa-folder-open');
+                }
+            }
+        }
+
+        function loadContent(section) {
+            const dynamicContent = document.getElementById("dynamic-content");
+            if (section === "docweb") {
+                dynamicContent.innerHTML = `
+                    <h2>DocWeb Home Page</h2>
+                    <ul>
+                        <li>Main Folder 1</li>
+                        <li>Main Folder 2</li>
+                        <li>Main Folder 3</li>
+                    </ul>
+                `;
+            }
+        }
     </script>
 </body>
 </html>
