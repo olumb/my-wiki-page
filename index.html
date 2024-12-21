@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OLUMB Control Systems</title>
+    <title>Quick Links Panel</title>
     <style>
         /* Genel Stil Ayarları */
         body {
@@ -13,180 +13,110 @@
             background-color: #f5f5f5;
         }
 
-        /* Üst Header */
-        #header {
-            background: linear-gradient(90deg, #5A86C8, #A8C7F7); /* Gradyan renk */
-            color: white;
-            padding: 15px 10px; /* Kısaltıldı */
-            border: 2px solid black; /* Siyah çerçeve */
-            position: relative;
-            display: flex;
-            align-items: center;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
-        }
-
-        #header img {
-            height: 50px; /* Logo boyutu */
-            margin-right: 10px;
-            background: transparent;
-        }
-
-        #header .title {
-            flex: 1;
-        }
-
-        #header .title h1 {
-            margin: 0;
-            font-size: 1.8em; /* Aynı boyutta */
-            color: white; /* Beyaz yazı */
-        }
-
-        #header .title h2 {
-            margin: 5px 0 0;
-            font-size: 1.4em; /* Üst başlıktan 2 font küçük */
-            color: black; /* Siyah yazı */
-        }
-
-        /* Tarih ve Saat */
-        #datetime {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 0.9em;
-            color: #e6e6e6;
-        }
-
-        /* Arama Çubuğu */
-        #search-bar {
-            position: absolute;
-            top: 40px;
-            right: 20px;
-        }
-
-        #search-box {
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
-        /* Ana Konteyner */
-        #container {
-            display: flex;
-        }
-
-        /* Sol Panel */
-        #sidebar {
-            width: 15%; /* 1/3 oranında daraltıldı */
+        /* Panel Genel Yapı */
+        .panel {
             background-color: #e6f2ff;
-            border-right: 1px solid #ccc;
-            padding: 10px;
-            overflow-y: auto;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            resize: vertical; /* Flexbox ile aşağı doğru uzatılabilir */
+            overflow: auto;
+            max-height: 300px; /* Maksimum yükseklik */
+            min-height: 100px; /* Minimum yükseklik */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
             box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
         }
 
-        .section {
-            margin-bottom: 20px;
-        }
-
-        .section-header {
+        .panel-header {
             background-color: #003366;
             color: white;
             padding: 5px;
-            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
             cursor: pointer;
         }
 
-        .section-content {
+        .panel-header .toggle-icon {
+            font-size: 12px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .panel-content {
             padding: 10px;
-            display: block;
-            background-color: #ffffff;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            display: block; /* Başlangıçta açık */
         }
 
-        /* Orta İçerik */
-        #content {
-            flex: 1;
-            padding: 20px;
-            background-color: #ffffff;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
+        .panel-content ul {
+            list-style: none;
+            padding: 0;
         }
 
-        h1, h2 {
+        .panel-content ul li {
+            margin: 5px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .panel-content ul li img {
+            margin-right: 10px;
+            height: 20px; /* İkon boyutu */
+        }
+
+        .panel-content ul li a {
+            text-decoration: none;
             color: #003366;
+        }
+
+        .panel-content ul li a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <!-- Üst Header -->
-    <div id="header">
-        <img src="Icon.png" alt="Logo">
-        <div class="title">
-            <h1>OLUMB Control Systems</h1>
-            <h2>Control System Design for Aerospace & Automotive</h2>
+    <!-- Sol Panel -->
+    <div class="panel" id="quick-links-panel">
+        <!-- Panel Başlık -->
+        <div class="panel-header" onclick="togglePanel('quick-links-panel')">
+            Quick Links
+            <span class="toggle-icon" id="toggle-icon">▼</span>
         </div>
-        <div id="datetime"></div>
-        <div id="search-bar">
-            <input type="text" id="search-box" placeholder="Search...">
-        </div>
-    </div>
-
-    <!-- Ana Konteyner -->
-    <div id="container">
-        <!-- Sol Panel -->
-        <div id="sidebar">
-            <div class="section">
-                <div class="section-header">Navigation</div>
-                <div class="section-content" id="navigation">
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                        <li><a href="#">Projects</a></li>
-                        <li><a href="#">Resources</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section">
-                <div class="section-header">Quick Links</div>
-                <div class="section-content" id="quick-links">
-                    <ul>
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="section">
-                <div class="section-header">Tags</div>
-                <div class="section-content" id="tags">
-                    <span>Microcontroller</span>
-                    <span>Embedded Systems</span>
-                    <span>Programming</span>
-                    <span>IoT</span>
-                    <span>Automation</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Orta İçerik -->
-        <div id="content">
-            <h1>Main Content</h1>
-            <p>This area is reserved for main content. You can add your documentation, tutorials, and guides here.</p>
+        <!-- Panel İçerik -->
+        <div class="panel-content">
+            <ul>
+                <li><img src="icon1.png" alt="Icon"><a href="#">Documentation home page</a></li>
+                <li><img src="icon2.png" alt="Icon"><a href="#">Ask questions/comment</a></li>
+                <li><img src="icon3.png" alt="Icon"><a href="#">Frequently asked questions</a></li>
+                <li><img src="icon4.png" alt="Icon"><a href="#">Report bugs</a></li>
+                <li><img src="icon5.png" alt="Icon"><a href="#">Using this Doc Web</a></li>
+                <li><img src="icon6.png" alt="Icon"><a href="#">Mosaic Industries web site</a></li>
+                <li><img src="icon7.png" alt="Icon"><a href="#">About Mosaic Industries</a></li>
+                <li><img src="icon8.png" alt="Icon"><a href="#">Contact us</a></li>
+                <li><img src="icon9.png" alt="Icon"><a href="#">Help!</a></li>
+            </ul>
         </div>
     </div>
 
     <script>
-        // Tarih ve saat güncellemesi
-        function updateDateTime() {
-            const now = new Date();
-            const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-            document.getElementById('datetime').innerText = now.toLocaleDateString('en-US', options);
+        function togglePanel(panelId) {
+            const panel = document.getElementById(panelId);
+            const content = panel.querySelector('.panel-content');
+            const icon = panel.querySelector('.toggle-icon');
+
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                icon.textContent = "▼"; // Açıkken aşağı ok
+            } else {
+                content.style.display = "none";
+                icon.textContent = "▲"; // Kapalıyken yukarı ok
+            }
         }
-        updateDateTime();
-        setInterval(updateDateTime, 60000); // Dakikada bir güncelle
     </script>
 </body>
 </html>
