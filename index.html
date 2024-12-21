@@ -213,11 +213,8 @@
                 <div class="panel-content">
                     <ul>
                         <!-- DocWeb Home Page Section -->
-                        <li onclick="toggleFolder(this)">
+                        <li onclick="loadContent('docweb')">
                             <i class="fas fa-folder"></i> DocWeb Home Page
-                            <ul>
-                                <li><i class="fas fa-file"></i> <a href="#">Using this DocWeb</a></li>
-                            </ul>
                         </li>
                         <hr> <!-- Çizgi ile ayırma -->
 
@@ -293,7 +290,9 @@
         <!-- İçerik Alanı -->
         <div id="content">
             <h1>Welcome to OLUMB Control Systems</h1>
-            <p>This is the main content area. Here you can add your documentation, tutorials, guides, or any other content.</p>
+            <div id="dynamic-content">
+                <p>This is the main content area. Here you can add your documentation, tutorials, guides, or any other content.</p>
+            </div>
         </div>
     </div>
 
@@ -335,6 +334,20 @@
                     icon.classList.remove('fa-folder');
                     icon.classList.add('fa-folder-open');
                 }
+            }
+        }
+
+        function loadContent(section) {
+            const dynamicContent = document.getElementById("dynamic-content");
+            if (section === "docweb") {
+                dynamicContent.innerHTML = `
+                    <h2>DocWeb Home Page</h2>
+                    <ul>
+                        <li>Main Folder 1</li>
+                        <li>Main Folder 2</li>
+                        <li>Main Folder 3</li>
+                    </ul>
+                `;
             }
         }
     </script>
