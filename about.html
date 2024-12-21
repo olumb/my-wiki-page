@@ -46,6 +46,19 @@
             height: auto;
             margin: 20px 0;
         }
+        #searchBox {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #searchResults {
+            margin-top: 10px;
+            color: #4CAF50;
+            font-weight: bold;
+        }
     </style>
     <!-- Prism.js CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
@@ -67,8 +80,8 @@
     </nav>
     <main>
         <h2>About This Site</h2>
-	<input type="text" id="searchBox" placeholder="Search the site..." onkeyup="performSearch()">
-	<div id="searchResults"></div>
+        <input type="text" id="searchBox" placeholder="Search the site..." onkeyup="performSearch()">
+        <div id="searchResults"></div>
         <img src="https://via.placeholder.com/600x300" alt="About Image">
         <p>This wiki-style site was inspired by Mosaic Industries. It is designed to provide information about embedded systems and microcontrollers.</p>
         
@@ -89,24 +102,23 @@
         <p>&copy; 2024 My Wiki Site</p>
     </footer>
 
-<script src="search.js"></script>
-<script>
-    function performSearch() {
-        const query = document.getElementById('searchBox').value;
-        const results = searchSite(query);
-        const resultsDiv = document.getElementById('searchResults');
-        resultsDiv.innerHTML = "";
+    <script src="search.js"></script>
+    <script>
+        function performSearch() {
+            const query = document.getElementById('searchBox').value.trim();
+            const results = searchSite(query);
+            const resultsDiv = document.getElementById('searchResults');
+            resultsDiv.innerHTML = "";
 
-        if (query && results.length > 0) {
-            results.forEach(result => {
-                const link = `<a href="${result.page}">${result.title}</a>`;
-                resultsDiv.innerHTML += `<p>${link}</p>`;
-            });
-        } else if (query) {
-            resultsDiv.innerHTML = "<p>No results found.</p>";
+            if (query && results.length > 0) {
+                results.forEach(result => {
+                    const link = `<a href="${result.page}" target="_blank">${result.title}</a>`;
+                    resultsDiv.innerHTML += `<p>${link}</p>`;
+                });
+            } else if (query) {
+                resultsDiv.innerHTML = "<p>No results found.</p>";
+            }
         }
-    }
-</script>
-
+    </script>
 </body>
 </html>
