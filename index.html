@@ -15,12 +15,14 @@
 
         /* Üst Header */
         #header {
-            background: linear-gradient(90deg, #5A86C8, #A8C7F7); /* Resimdeki renk tonları */
+            background: linear-gradient(90deg, #5A86C8, #A8C7F7); /* Gradyan renk */
             color: white;
-            padding: 15px 10px; /* 5mm daha kısaltıldı */
+            padding: 15px 10px; /* Kısaltıldı */
+            border: 2px solid black; /* Siyah çerçeve */
             position: relative;
             display: flex;
             align-items: center;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
         }
 
         #header img {
@@ -75,11 +77,12 @@
 
         /* Sol Panel */
         #sidebar {
-            width: 20%;
+            width: 15%; /* 1/3 oranında daraltıldı */
             background-color: #e6f2ff;
             border-right: 1px solid #ccc;
             padding: 10px;
             overflow-y: auto;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
         }
 
         .section {
@@ -107,6 +110,7 @@
             flex: 1;
             padding: 20px;
             background-color: #ffffff;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
         }
 
         h1, h2 {
