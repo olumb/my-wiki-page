@@ -11,9 +11,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
             display: flex;
-            flex-direction: column; /* Üst panelin üstte yer alması için */
+            flex-direction: column; /* Üst panel yukarıda */
+            background-color: #f5f5f5;
         }
 
         /* Üst Panel */
@@ -72,6 +72,65 @@
             font-size: 1em;
         }
 
+        /* Sol Paneller Konteyner */
+        #side-panels {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Paneller arasındaki boşluk */
+            padding: 10px;
+        }
+
+        /* Panel Genel Yapı */
+        .panel {
+            background-color: #e6f2ff;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            resize: vertical; /* Flexbox ile aşağı doğru uzatılabilir */
+            overflow: auto;
+            max-height: 300px; /* Maksimum yükseklik */
+            min-height: 100px; /* Minimum yükseklik */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
+        }
+
+        .panel-header {
+            background-color: #003366;
+            color: white;
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            cursor: pointer;
+        }
+
+        .panel-header .toggle-icon {
+            font-size: 12px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .panel-content {
+            padding: 10px;
+            display: block; /* Başlangıçta açık */
+        }
+
+        .tags-content span {
+            display: inline-block;
+            background-color: #cce5ff;
+            color: #003366;
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
         /* İçerik Alanı */
         #content {
             flex: 1;
@@ -85,8 +144,6 @@
         h1, h2, p {
             color: #003366;
         }
-
-        /* Sol Paneller için mevcut CSS korunuyor */
     </style>
 </head>
 <body>
