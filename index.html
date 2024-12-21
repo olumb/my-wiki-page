@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Panel Layout</title>
+    <title>Side Panels Layout</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Genel Stil Ayarları */
@@ -12,6 +12,16 @@
             margin: 0;
             padding: 0;
             background-color: #f5f5f5;
+            display: flex;
+        }
+
+        /* Sol Panel Konteyner */
+        #side-panels {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Paneller arasındaki boşluk */
+            padding: 10px;
         }
 
         /* Panel Genel Yapı */
@@ -29,7 +39,6 @@
             border-bottom-left-radius: 10px;
             border-bottom-right-radius: 10px;
             box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
-            margin-bottom: 20px;
         }
 
         .panel-header {
@@ -93,69 +102,61 @@
     </style>
 </head>
 <body>
-    <!-- Üst Panel -->
-    <div class="panel" id="header-panel">
-        <div class="panel-header">
-            OLUMB Control Systems
-            <span class="toggle-icon" onclick="togglePanel('header-panel')">▼</span>
+    <!-- Sol Panel Konteyner -->
+    <div id="side-panels">
+        <!-- Navigation Panel -->
+        <div class="panel" id="navigation-panel">
+            <div class="panel-header">
+                Navigation
+                <span class="toggle-icon" onclick="togglePanel('navigation-panel')">▼</span>
+            </div>
+            <div class="panel-content">
+                <ul>
+                    <li><i class="fas fa-home"></i><a href="#">Home</a></li>
+                    <li><i class="fas fa-info-circle"></i><a href="#">About</a></li>
+                    <li><i class="fas fa-envelope"></i><a href="#">Contact</a></li>
+                    <li><i class="fas fa-book"></i><a href="#">Tutorials</a></li>
+                    <li><i class="fas fa-project-diagram"></i><a href="#">Projects</a></li>
+                    <li><i class="fas fa-cogs"></i><a href="#">Resources</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="panel-content">
-            <h2>Control System Design for Aerospace & Automotive</h2>
-        </div>
-    </div>
 
-    <!-- Navigation Panel -->
-    <div class="panel" id="navigation-panel">
-        <div class="panel-header">
-            Navigation
-            <span class="toggle-icon" onclick="togglePanel('navigation-panel')">▼</span>
+        <!-- Quick Links Panel -->
+        <div class="panel" id="quick-links-panel">
+            <div class="panel-header">
+                Quick Links
+                <span class="toggle-icon" onclick="togglePanel('quick-links-panel')">▼</span>
+            </div>
+            <div class="panel-content">
+                <ul>
+                    <li><i class="fas fa-book"></i><a href="#">Documentation home page</a></li>
+                    <li><i class="fas fa-comment"></i><a href="#">Ask questions/comment</a></li>
+                    <li><i class="fas fa-question-circle"></i><a href="#">Frequently asked questions</a></li>
+                    <li><i class="fas fa-bug"></i><a href="#">Report bugs</a></li>
+                    <li><i class="fas fa-tools"></i><a href="#">Using this Doc Web</a></li>
+                    <li><i class="fas fa-industry"></i><a href="#">Mosaic Industries web site</a></li>
+                    <li><i class="fas fa-info-circle"></i><a href="#">About Mosaic Industries</a></li>
+                    <li><i class="fas fa-envelope"></i><a href="#">Contact us</a></li>
+                    <li><i class="fas fa-life-ring"></i><a href="#">Help!</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="panel-content">
-            <ul>
-                <li><i class="fas fa-home"></i><a href="#">Home</a></li>
-                <li><i class="fas fa-info-circle"></i><a href="#">About</a></li>
-                <li><i class="fas fa-envelope"></i><a href="#">Contact</a></li>
-                <li><i class="fas fa-book"></i><a href="#">Tutorials</a></li>
-                <li><i class="fas fa-project-diagram"></i><a href="#">Projects</a></li>
-                <li><i class="fas fa-cogs"></i><a href="#">Resources</a></li>
-            </ul>
-        </div>
-    </div>
 
-    <!-- Quick Links Panel -->
-    <div class="panel" id="quick-links-panel">
-        <div class="panel-header">
-            Quick Links
-            <span class="toggle-icon" onclick="togglePanel('quick-links-panel')">▼</span>
-        </div>
-        <div class="panel-content">
-            <ul>
-                <li><i class="fas fa-book"></i><a href="#">Documentation home page</a></li>
-                <li><i class="fas fa-comment"></i><a href="#">Ask questions/comment</a></li>
-                <li><i class="fas fa-question-circle"></i><a href="#">Frequently asked questions</a></li>
-                <li><i class="fas fa-bug"></i><a href="#">Report bugs</a></li>
-                <li><i class="fas fa-tools"></i><a href="#">Using this Doc Web</a></li>
-                <li><i class="fas fa-industry"></i><a href="#">Mosaic Industries web site</a></li>
-                <li><i class="fas fa-info-circle"></i><a href="#">About Mosaic Industries</a></li>
-                <li><i class="fas fa-envelope"></i><a href="#">Contact us</a></li>
-                <li><i class="fas fa-life-ring"></i><a href="#">Help!</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Tags Panel -->
-    <div class="panel" id="tags-panel">
-        <div class="panel-header">
-            Tags
-            <span class="toggle-icon" onclick="togglePanel('tags-panel')">▼</span>
-        </div>
-        <div class="panel-content tags-content">
-            <span>Microcontroller</span>
-            <span>Embedded Systems</span>
-            <span>Programming</span>
-            <span>IoT</span>
-            <span>Automation</span>
-            <span>Data Acquisition</span>
+        <!-- Tags Panel -->
+        <div class="panel" id="tags-panel">
+            <div class="panel-header">
+                Tags
+                <span class="toggle-icon" onclick="togglePanel('tags-panel')">▼</span>
+            </div>
+            <div class="panel-content tags-content">
+                <span>Microcontroller</span>
+                <span>Embedded Systems</span>
+                <span>Programming</span>
+                <span>IoT</span>
+                <span>Automation</span>
+                <span>Data Acquisition</span>
+            </div>
         </div>
     </div>
 
