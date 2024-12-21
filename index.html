@@ -12,13 +12,13 @@
             margin: 0;
             padding: 0;
             display: flex;
-            flex-direction: column; /* Üst panel yukarıda */
+            flex-direction: column;
             background-color: #f5f5f5;
         }
 
         /* Üst Panel */
         #header {
-            background: linear-gradient(90deg, #357ABD, #5A86C8); /* Gradyan renk */
+            background: linear-gradient(90deg, #357ABD, #5A86C8);
             color: white;
             padding: 20px 10px;
             position: relative;
@@ -26,11 +26,11 @@
             align-items: center;
             justify-content: space-between;
             border-bottom: 2px solid black;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         #header img {
-            height: 50px; /* Logo boyutu */
+            height: 50px;
             margin-right: 10px;
         }
 
@@ -52,29 +52,6 @@
             color: black;
         }
 
-        /* Tarih ve Saat */
-        #datetime {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 0.9em;
-            color: white;
-        }
-
-        /* Arama Çubuğu */
-        #search-bar {
-            position: absolute;
-            top: 40px; /* Tarih saat ile çakışmayı engellemek için biraz aşağı alındı */
-            right: 20px;
-        }
-
-        #search-box {
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-
         /* Ana Konteyner */
         #main-container {
             display: flex;
@@ -84,29 +61,19 @@
             gap: 10px;
         }
 
-        /* Sol Paneller Konteyner */
+        /* Sol Paneller */
         #side-panels {
-            width: 18%; /* 1 cm daraltıldı */
+            width: 18%;
             display: flex;
             flex-direction: column;
-            gap: 10px; /* Paneller arasındaki boşluk */
+            gap: 10px;
         }
 
-        /* Panel Genel Yapı */
         .panel {
             background-color: #e6f2ff;
             border: 1px solid #ccc;
-            display: flex;
-            flex-direction: column;
-            resize: vertical; /* Flexbox ile aşağı doğru uzatılabilir */
-            overflow: auto;
-            max-height: 300px; /* Maksimum yükseklik */
-            min-height: 100px; /* Minimum yükseklik */
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .panel-header {
@@ -121,42 +88,6 @@
             cursor: pointer;
         }
 
-        .panel-header .toggle-icon {
-            font-size: 12px;
-            color: white;
-            cursor: pointer;
-        }
-
-        .panel-content {
-            padding: 10px;
-            display: block; /* Başlangıçta açık */
-        }
-
-        .tags-content span {
-            display: inline-block;
-            background-color: #cce5ff;
-            color: #003366;
-            margin: 5px;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.9em;
-        }
-
-        /* İçerik Alanı */
-        #content {
-            flex: 1;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* Gölgelendirme */
-            min-height: 600px; /* İçerik için daha fazla alan */
-        }
-
-        h1, h2, p {
-            color: #003366;
-        }
-
-        /* Navigation Panel İçin Yeni Stil */
         .panel-content ul {
             list-style: none;
             padding-left: 10px;
@@ -177,12 +108,16 @@
         }
 
         .panel-content ul ul.open {
-            display: block; /* Açılan alt klasörler */
+            display: block;
         }
 
-        hr {
-            border: 1px solid #ccc;
-            margin: 10px 0;
+        /* İçerik Alanı */
+        #content {
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
@@ -193,10 +128,6 @@
         <div class="title">
             <h1>OLUMB Control Systems</h1>
             <h2>Control System Design for Aerospace & Automotive</h2>
-        </div>
-        <div id="datetime"></div>
-        <div id="search-bar">
-            <input type="text" id="search-box" placeholder="Search...">
         </div>
     </div>
 
@@ -212,69 +143,26 @@
                 </div>
                 <div class="panel-content">
                     <ul>
-                        <!-- DocWeb Home Page Section -->
-                        <li onclick="loadContent('docweb')">
-                            <i class="fas fa-folder"></i> DocWeb Home Page
-                        </li>
-                        <hr> <!-- Çizgi ile ayırma -->
-
-                        <!-- Main Folder 1 -->
+                        <!-- Process Control -->
                         <li onclick="toggleFolder(this)">
                             <i class="fas fa-folder"></i> Process Control
                             <ul>
-                                <li><a onclick="loadContent('chapter1')"><i class="fas fa-file"></i> Chapter 1: Introduction</a></li>
-                                <li><i class="fas fa-file"></i> File 1.2</li>
+                                <!-- Chapter 1 -->
+                                <li onclick="toggleFolder(this)">
+                                    <i class="fas fa-folder"></i> Chapter 1: Introduction
+                                    <ul>
+                                        <li><a onclick="loadContent('section1')"><i class="fas fa-file"></i> Section 1</a></li>
+                                        <li><a onclick="loadContent('section2')"><i class="fas fa-file"></i> Section 2</a></li>
+                                        <li><a onclick="loadContent('section3')"><i class="fas fa-file"></i> Section 3</a></li>
+                                        <li><a onclick="loadContent('section4')"><i class="fas fa-file"></i> Section 4</a></li>
+                                        <li><a onclick="loadContent('section5')"><i class="fas fa-file"></i> Section 5</a></li>
+                                        <li><a onclick="loadContent('section6')"><i class="fas fa-file"></i> Section 6</a></li>
+                                        <li><a onclick="loadContent('section7')"><i class="fas fa-file"></i> Section 7</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
-
-                        <!-- Main Folder 2 -->
-                        <li onclick="toggleFolder(this)">
-                            <i class="fas fa-folder"></i> Main Folder 2
-                            <ul>
-                                <li><i class="fas fa-file"></i> File 2.1</li>
-                            </ul>
-                        </li>
-
-                        <!-- File 3 -->
-                        <li><i class="fas fa-file"></i> File 3</li>
                     </ul>
-                </div>
-            </div>
-
-            <!-- Quick Links Panel -->
-            <div class="panel" id="quick-links-panel">
-                <div class="panel-header">
-                    Quick Links
-                    <span class="toggle-icon" onclick="togglePanel('quick-links-panel')">▼</span>
-                </div>
-                <div class="panel-content">
-                    <ul>
-                        <li><i class="fas fa-book"></i><a href="#">Documentation home page</a></li>
-                        <li><i class="fas fa-comment"></i><a href="#">Ask questions/comment</a></li>
-                        <li><i class="fas fa-question-circle"></i><a href="#">Frequently asked questions</a></li>
-                        <li><i class="fas fa-bug"></i><a href="#">Report bugs</a></li>
-                        <li><i class="fas fa-tools"></i><a href="#">Using this Doc Web</a></li>
-                        <li><i class="fas fa-industry"></i><a href="#">Mosaic Industries web site</a></li>
-                        <li><i class="fas fa-info-circle"></i><a href="#">About Mosaic Industries</a></li>
-                        <li><i class="fas fa-envelope"></i><a href="#">Contact us</a></li>
-                        <li><i class="fas fa-life-ring"></i><a href="#">Help!</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Tags Panel -->
-            <div class="panel" id="tags-panel">
-                <div class="panel-header">
-                    Tags
-                    <span class="toggle-icon" onclick="togglePanel('tags-panel')">▼</span>
-                </div>
-                <div class="panel-content tags-content">
-                    <span>Microcontroller</span>
-                    <span>Embedded Systems</span>
-                    <span>Programming</span>
-                    <span>IoT</span>
-                    <span>Automation</span>
-                    <span>Data Acquisition</span>
                 </div>
             </div>
         </div>
@@ -283,35 +171,12 @@
         <div id="content">
             <h1>Welcome to OLUMB Control Systems</h1>
             <div id="dynamic-content">
-                <p>This is the main content area. Here you can add your documentation, tutorials, guides, or any other content.</p>
+                <p>This is the main content area. Click on a section to load its details here.</p>
             </div>
         </div>
     </div>
 
     <script>
-        function updateDateTime() {
-            const now = new Date();
-            const options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-            document.getElementById('datetime').innerText = now.toLocaleDateString('en-US', options);
-        }
-
-        updateDateTime();
-        setInterval(updateDateTime, 60000); // Dakikada bir güncelle
-
-        function togglePanel(panelId) {
-            const panel = document.getElementById(panelId);
-            const content = panel.querySelector('.panel-content');
-            const icon = panel.querySelector('.toggle-icon');
-
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-                icon.textContent = "▼"; // Açıkken aşağı ok
-            } else {
-                content.style.display = "none";
-                icon.textContent = "▲"; // Kapalıyken yukarı ok
-            }
-        }
-
         function toggleFolder(folderElement) {
             const subList = folderElement.querySelector('ul');
             const icon = folderElement.querySelector('i');
@@ -331,35 +196,7 @@
 
         function loadContent(section) {
             const dynamicContent = document.getElementById("dynamic-content");
-            if (section === "docweb") {
-                dynamicContent.innerHTML = `
-                    <h2>DocWeb Home Page</h2>
-                    <ul>
-                        <li>Main Folder 1</li>
-                        <li>Main Folder 2</li>
-                        <li>Main Folder 3</li>
-                    </ul>
-                `;
-            } else if (section === "chapter1") {
-                dynamicContent.innerHTML = `
-                    <h2>Chapter 1: Introduction</h2>
-                    <p>
-                        The goal of this chapter is to provide a motivation for, and an introduction to, process control and instrumentation.
-                        After studying this chapter, the reader, given a process, should be able to do the following:
-                    </p>
-                    <ul>
-                        <li>Determine possible control objectives.</li>
-                        <li>Assess the importance of process control from safety, environmental, and economic points of view.</li>
-                        <li>Sketch a process instrumentation and control diagram.</li>
-                    </ul>
-                    <p>The major sections of this chapter are:</p>
-                    <ul>
-                        <li>1.1 Introduction</li>
-                        <li>1.2 Instrumentation</li>
-                        <li>1.3 Process Models and Dynamic Behavior</li>
-                    </ul>
-                `;
-            }
+            dynamicContent.innerHTML = `<h2>${section}</h2><p>Content for ${section} will be added here.</p>`;
         }
     </script>
 </body>
