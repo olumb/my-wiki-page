@@ -141,6 +141,17 @@
             display: block;
         }
 
+        /* Tags Panel İçeriği */
+        .tags-content span {
+            display: inline-block;
+            background-color: #cce5ff;
+            color: #003366;
+            margin: 5px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
         /* İçerik Alanı */
         #content {
             flex: 1;
@@ -181,19 +192,15 @@
                 </div>
                 <div class="panel-content">
                     <ul>
-                        <!-- DocWeb Home Page Section -->
                         <li onclick="loadContent('docweb')">
                             <i class="fas fa-folder"></i> DocWeb Home Page
                         </li>
-                        <hr> <!-- Çizgi ile ayırma -->
-
-                        <!-- Process Control -->
+                        <hr>
                         <li>
                             <span onclick="toggleFolder(this)">
                                 <i class="fas fa-plus"></i> Process Control
                             </span>
                             <ul>
-                                <!-- Chapter 1 -->
                                 <li>
                                     <span onclick="toggleFolder(this)">
                                         <i class="fas fa-plus"></i> Chapter 1. Introduction
@@ -226,6 +233,7 @@
                         <li><i class="fas fa-comment"></i><a href="#">Ask questions/comment</a></li>
                         <li><i class="fas fa-question-circle"></i><a href="#">Frequently asked questions</a></li>
                         <li><i class="fas fa-bug"></i><a href="#">Report bugs</a></li>
+                        <li><i class="fas fa-envelope"></i><a href="#">Contact us</a></li>
                     </ul>
                 </div>
             </div>
