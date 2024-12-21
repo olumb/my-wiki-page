@@ -310,7 +310,22 @@
                 }
             }
         }
-
+        // Yeni loadContent Fonksiyonu Buraya Eklenir
+        function loadContent(page) {
+            const dynamicContent = document.getElementById("dynamic-content");
+            fetch(page)
+                .then(response => {
+                    if (!response.ok) throw new Error("Page not found");
+                    return response.text();
+                })
+                .then(html => {
+                    dynamicContent.innerHTML = html;
+                })
+                .catch(error => {
+                    dynamicContent.innerHTML = "<p>Error loading content. Please try again later.</p>";
+                });
+        }
+        
         function loadContent(section) {
             const dynamicContent = document.getElementById("dynamic-content");
             if (section === "docweb") {
