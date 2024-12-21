@@ -198,12 +198,12 @@
                         <hr>
                         <li>
                             <span onclick="toggleFolder(this)">
-                                <i class="fas fa-plus"></i> Process Control
+                                <i class="fas fa-plus"></i> <i class="fas fa-folder"></i> Process Control
                             </span>
                             <ul>
                                 <li>
                                     <span onclick="toggleFolder(this)">
-                                        <i class="fas fa-plus"></i> Chapter 1. Introduction
+                                        <i class="fas fa-plus"></i> <i class="fas fa-folder"></i> Chapter 1. Introduction
                                     </span>
                                     <ul>
                                         <li><a href="process_control/chapter1_1.html"><i class="fas fa-file"></i> 1.1 Introduction</a></li>
@@ -233,7 +233,11 @@
                         <li><i class="fas fa-comment"></i><a href="#">Ask questions/comment</a></li>
                         <li><i class="fas fa-question-circle"></i><a href="#">Frequently asked questions</a></li>
                         <li><i class="fas fa-bug"></i><a href="#">Report bugs</a></li>
+                        <li><i class="fas fa-tools"></i><a href="#">Using this Doc Web</a></li>
+                        <li><i class="fas fa-industry"></i><a href="#">Mosaic Industries web site</a></li>
+                        <li><i class="fas fa-info-circle"></i><a href="#">About Mosaic Industries</a></li>
                         <li><i class="fas fa-envelope"></i><a href="#">Contact us</a></li>
+                        <li><i class="fas fa-life-ring"></i><a href="#">Help!</a></li>
                     </ul>
                 </div>
             </div>
@@ -290,7 +294,7 @@
 
         function toggleFolder(folderElement) {
             const subList = folderElement.nextElementSibling;
-            const icon = folderElement.querySelector('i');
+            const icon = folderElement.querySelector('.fa-plus, .fa-minus');
 
             if (subList) {
                 if (subList.classList.contains('open')) {
