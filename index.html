@@ -3,132 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Wiki Site</title>
+    <title>Mosaic-Style Layout</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             margin: 0;
             padding: 0;
+            background-color: #f5f5f5;
         }
-        header {
-            background: #4CAF50;
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-        }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
-            background: #333;
-        }
-        nav ul li {
-            display: inline;
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-        }
-        main {
+        #container {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            gap: 20px;
-            padding: 20px;
+            height: 100vh;
         }
-        article {
-            flex: 1 1 calc(50% - 20px);
-            border: 1px solid #ddd;
+        #sidebar {
+            width: 20%;
+            background-color: #e6f2ff;
+            border-right: 1px solid #ccc;
             padding: 10px;
-            background: #f9f9f9;
-            border-radius: 5px;
+            overflow-y: auto;
         }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 10px 0;
+        #content {
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        h1, h2 {
+            color: #003366;
+        }
+        #navigation {
+            margin-bottom: 20px;
+        }
+        #quick-links, #tags {
             margin-top: 20px;
         }
-        img {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
+        ul {
+            list-style: none;
+            padding: 0;
         }
-        #searchBox {
-            width: 100%;
-            max-width: 400px;
-            padding: 10px;
-            margin: 20px 0;
-            border: 1px solid #ccc;
+        ul li {
+            margin-bottom: 10px;
+        }
+        ul li a {
+            text-decoration: none;
+            color: #003366;
+        }
+        ul li a:hover {
+            text-decoration: underline;
+        }
+        #tags span {
+            display: inline-block;
+            background-color: #cce5ff;
+            color: #003366;
+            margin: 5px;
+            padding: 5px 10px;
             border-radius: 5px;
-        }
-        #searchResults {
-            margin-top: 10px;
-            color: #4CAF50;
-            font-weight: bold;
+            font-size: 0.9em;
         }
     </style>
-    <!-- Prism.js CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet">
-    <!-- Prism.js JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Wiki Site</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-			<li><a href="tutorials.html">Tutorials</a></li>
-			<li><a href="projects.html">Projects</a></li>
-			<li><a href="resources.html">Resources</a></li>
-        </ul>
-    </nav>
-    <main>
-        <input type="text" id="searchBox" placeholder="Search the site..." onkeyup="performSearch()">
-        <div id="searchResults"></div>
-        <article>
-            <h2>Introduction</h2>
-            <img src="https://via.placeholder.com/600x300" alt="Example Image">
-            <p>Welcome to the home page of our wiki site. Here you can find all information about embedded systems.</p>
-        </article>
-        <article>
-            <h2>Code Example</h2>
-            <pre><code class="language-javascript">
-function helloWorld() {
-    console.log("Hello, World!");
-}
-helloWorld();
-            </code></pre>
-        </article>
-    </main>
-    <footer>
-        <p>&copy; 2024 My Wiki Site</p>
-    </footer>
-
-    <script src="search.js"></script>
-    <script>
-        function performSearch() {
-            const query = document.getElementById('searchBox').value.trim();
-            const results = searchSite(query);
-            const resultsDiv = document.getElementById('searchResults');
-            resultsDiv.innerHTML = "";
-
-            if (query && results.length > 0) {
-                results.forEach(result => {
-                    const link = `<a href="${result.page}" target="_blank">${result.title}</a>`;
-                    resultsDiv.innerHTML += `<p>${link}</p>`;
-                });
-            } else if (query) {
-                resultsDiv.innerHTML = "<p>No results found.</p>";
-            }
-        }
-    </script>
+    <div id="container">
+        <!-- Sol Panel -->
+        <div id="sidebar">
+            <div id="navigation">
+                <h2>Navigation</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="tutorials.html">Tutorials</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div id="quick-links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div id="tags">
+                <h2>Tags</h2>
+                <span>Microcontroller</span>
+                <span>Embedded Systems</span>
+                <span>Programming</span>
+                <span>IoT</span>
+                <span>Automation</span>
+            </div>
+        </div>
+        <!-- Orta İçerik -->
+        <div id="content">
+            <h1>Welcome to the Mosaic Documentation Web</h1>
+            <p>This is the main content area where detailed documentation, guides, and resources will be displayed. Use the navigation menu on the left to explore different sections.</p>
+        </div>
+    </div>
 </body>
 </html>
