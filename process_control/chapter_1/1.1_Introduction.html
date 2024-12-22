@@ -67,13 +67,13 @@
     <h2>The Development of a Control Strategy</h2>
     <p>The development of a control strategy consists of formulating or identifying the following:</p>
     <ol>
-        <li>Control objectives</li>
-        <li>Input variables—classified as (a) manipulated or (b) disturbance variables; inputs may change continuously, or at discrete intervals of time</li>
-        <li>Output variables—classified as (a) measured or (b) unmeasured variables; measurements may be made continuously or at discrete intervals of time</li>
-        <li>Constraints—classified as (a) hard or (b) soft</li>
-        <li>Operating characteristics—classified as (a) continuous, (b) batch, or (c) semicontinuous (or semibatch)</li>
-        <li>Safety, environmental, and economic considerations</li>
-        <li>Control structure—the controllers can be feedback or feed-forward in nature</li>
+        <li><b>1.</b> Control objectives</li>
+        <li><b>2.</b> Input variables—classified as (a) manipulated or (b) disturbance variables; inputs may change continuously, or at discrete intervals of time</li>
+        <li><b>3.</b> Output variables—classified as (a) measured or (b) unmeasured variables; measurements may be made continuously or at discrete intervals of time</li>
+        <li><b>4.</b> Constraints—classified as (a) hard or (b) soft</li>
+        <li><b>5.</b> Operating characteristics—classified as (a) continuous, (b) batch, or (c) semicontinuous (or semibatch)</li>
+        <li><b>6.</b> Safety, environmental, and economic considerations</li>
+        <li><b>7.</b> Control structure—the controllers can be feedback or feed-forward in nature</li>
     </ol>
      <p>Here we discuss each of the steps in formulating a control problem in more detail.</p>
     <ol>
@@ -122,31 +122,32 @@
     <p>
         There are obvious constraints on the height in this tank. If the tank overflows it may create safety and environmental hazards, which may also have economic significance. Let us analyze this system using a step-by-step procedure.
     </p>
-    <p>
-        <b>1.</b> Control Objective: The control objective is to maintain the height within certain bounds. If it is too high it will overflow and if it is too low there may be problems with the flow to process 2. Usually, a specific desired height will be selected. This desired height is known as the setpoint.
-    </p>
-    <p>
-        <b>2.</b> Input Variables: The input variables are the flow from process 1 and the flow to process 2. Notice that an outlet flow rate is considered an input to this problem. The question is which input is manipulated and which is a disturbance? That depends. We discuss this problem further in a moment.
-    </p>
-    <p>
-        <b>3.</b> Output Variables: The most important output variable is the liquid level. We assume that it is measured.
-    </p>
-    <p>
-       <b>4.</b> Constraints: There are a number of constraints in this problem. There is a maximum liquid level; if this is exceeded, the tank will overflow. There are minimum and maximum flow rates through the inlet and outlet valves.
-    </p>
-    <p>
-       <b>5.</b> Operating Characteristics: We assume that this is a continuous process, that is, that there is a continuous flow in and out of the tank. It would be a semicontinuous process if, for example, there was an inlet flow with no outlet flow (if the tank was simply being filled).
-    </p>
-    <p>
-        <b>6.</b> Safety, Environmental, and Economic Considerations: These aspects depend somewhat on the fluid characteristics. If it is a hazardous chemical, then there is a tremendous incentive from safety and environmental considerations to not allow the tank to overflow. Indeed, this is also an economic consideration, since injuries to employees or environmental cleanup costs money. Even if the substance is water, it has likely been treated by an upstream process unit, so losing water owing to overflow will incur an economic penalty.
-    </p>
-    <p>
-        Safety considerations play an important role in the specification of control valves (fail-open or fail-closed). For this particular problem, the control-valve specification will depend on which input is manipulated. This is discussed in detail shortly.
-    </p>
-    <p>
-        <b>7.</b> Control Structure: There are numerous possibilities for control of this system. We discuss first the feedback strategies, then the feed-forward strategies.
-    </p>
-
+    <ol>
+        <li>
+            <b>Control Objective:</b> The control objective is to maintain the height within certain bounds. If it is too high it will overflow and if it is too low there may be problems with the flow to process 2. Usually, a specific desired height will be selected. This desired height is known as the setpoint.
+        </li>
+        <li>
+            <b>Input Variables:</b> The input variables are the flow from process 1 and the flow to process 2. Notice that an outlet flow rate is considered an input to this problem. The question is which input is manipulated and which is a disturbance? That depends. We discuss this problem further in a moment.
+        </li>
+        <li>
+            <b>Output Variables:</b> The most important output variable is the liquid level. We assume that it is measured.
+        </li>
+        <li>
+            <b>Constraints:</b> There are a number of constraints in this problem. There is a maximum liquid level; if this is exceeded, the tank will overflow. There are minimum and maximum flow rates through the inlet and outlet valves.
+        </li>
+        <li>
+            <b>Operating Characteristics:</b> We assume that this is a continuous process, that is, that there is a continuous flow in and out of the tank. It would be a semicontinuous process if, for example, there was an inlet flow with no outlet flow (if the tank was simply being filled).
+        </li>
+        <li>
+            <b>Safety, Environmental, and Economic Considerations:</b> These aspects depend somewhat on the fluid characteristics. If it is a hazardous chemical, then there is a tremendous incentive from safety and environmental considerations to not allow the tank to overflow. Indeed, this is also an economic consideration, since injuries to employees or environmental cleanup costs money. Even if the substance is water, it has likely been treated by an upstream process unit, so losing water owing to overflow will incur an economic penalty.
+            <p>
+                Safety considerations play an important role in the specification of control valves (fail-open or fail-closed). For this particular problem, the control-valve specification will depend on which input is manipulated. This is discussed in detail shortly.
+            </p>
+        </li>
+        <li>
+            <b>Control Structure:</b> There are numerous possibilities for control of this system. We discuss first the feedback strategies, then the feed-forward strategies.
+        </li>
+    </ol>
     <h3>Feedback Control</h3>
     <p>
         The measured variable for a feedback control strategy is the tank height. Which input variable is manipulated depends on what is happening in process 1 and process 2. Let us consider two different scenarios.
@@ -236,50 +237,41 @@
     <p>
         A common multivariable control problem that we face every day is taking a shower. A simplified process schematic is shown in Figure 1-11. We analyze this process step by step.
     </p>
-    <h5>Control Objectives</h5>
     <p>
-        Control objectives when taking a shower include the following:
+    <b>1.</b> Control Objectives: Control objectives when taking a shower include the following:
     </p>
-    <ul>
+    <ol type="a">
         <li>To become clean</li>
         <li>To be comfortable (correct temperature and water velocity as it contacts the body)</li>
         <li>To "look good" (clean hair, etc.)</li>
         <li>To become refreshed</li>
-    </ul>
+    </ol>
     <p>
         To simplify our analysis, for the rest of the problem we discuss how we can satisfy the second objective (to maintain water temperature and flow rate at comfortable values). Similar analysis can be performed for the other objectives.
     </p>
-    <h5>Input Variables</h5>
     <p>
-        The manipulated input variables are hot-water and cold-water valve positions. Some showers can also vary the velocity by adjustment of the shower head. Another input is body position—you can move into and out of the shower stream. Disturbance inputs include a drop in water pressure (say, owing to a toilet flushing) and changes in hot water temperature owing to "using up the hot water from the heater."
+        <b>2.</b> Input Variables: The manipulated input variables are hot-water and cold-water valve positions. Some showers can also vary the velocity by adjustment of the shower head. Another input is body position—you can move into and out of the shower stream. Disturbance inputs include a drop in water pressure (say, owing to a toilet flushing) and changes in hot water temperature owing to "using up the hot water from the heater."
     </p>
-    <h5>Output Variables</h5>
     <p>
-        The "measured" output variables are the temperature and flow rate (or velocity) of the mixed stream as it contacts your body.
+        <b>3.</b> Output Variables: The "measured" output variables are the temperature and flow rate (or velocity) of the mixed stream as it contacts your body.
     </p>
-    <h5>Constraints</h5>
     <p>
-        There are minimum and maximum valve positions (and therefore flow rates) on both streams. The maximum mixed temperature is equal to the hot water temperature and the minimum mixed temperature is equal to the cold water temperature. The previous constraints were hard constraints—they cannot be physically violated. An example of a soft constraint is the mixed-stream water temperature—you do not want it to be above a certain value because you may get scalded. This is a soft constraint because it can physically happen, although you do not want it to happen.
+        <b>4.</b> Constraints: There are minimum and maximum valve positions (and therefore flow rates) on both streams. The maximum mixed temperature is equal to the hot water temperature and the minimum mixed temperature is equal to the cold water temperature. The previous constraints were hard constraints—they cannot be physically violated. An example of a soft constraint is the mixed-stream water temperature—you do not want it to be above a certain value because you may get scalded. This is a soft constraint because it can physically happen, although you do not want it to happen.
     </p>
-    <h5>Operating Characteristics</h5>
     <p>
-        This process is continuous while you are taking a shower but is most likely viewed as a batch process, since it is a small part of your day. It could easily be called a semicontinuous (semibatch) process.
+        <b>5.</b> Operating Characteristics: This process is continuous while you are taking a shower but is most likely viewed as a batch process, since it is a small part of your day. It could easily be called a semicontinuous (semibatch) process.
     </p>
-    <h5>Safety, Environmental, and Economic Considerations</h5>
     <p>
-        Too high of a temperature can scald you—this is certainly a safety consideration. Economically, if your showers are too long, more energy is consumed to heat the water, costing money. Environmentally (and economically), more water consumption means that more water and wastewater must be treated. An economic objective might be to minimize the shower time. However, if the shower time is too short, or not frequent enough, your clothes will become dirty and must be washed more often—increasing your clothes-cleaning bill.
+        <b>6.</b> Safety, Environmental, and Economic Considerations: Too high of a temperature can scald you—this is certainly a safety consideration. Economically, if your showers are too long, more energy is consumed to heat the water, costing money. Environmentally (and economically), more water consumption means that more water and wastewater must be treated. An economic objective might be to minimize the shower time. However, if the shower time is too short, or not frequent enough, your clothes will become dirty and must be washed more often—increasing your clothes-cleaning bill.
     </p>
-    <h5>Control Structure</h5>
     <p>
-        This is a multivariable control problem because adjusting either valve affects both temperature and flow rate. Control manipulations must be "coordinated," that is, if the hot-water flow rate is increased to increase the temperature, the cold-water flow rate must be decreased to maintain the same total flow rate. The measurement signals are continuous, but the manipulated variable changes are likely to be discrete (unless your hands are continuously varying the valve positions).
+        <b>7.</b> Control Structure: This is a multivariable control problem because adjusting either valve affects both temperature and flow rate. Control manipulations must be "coordinated," that is, if the hot-water flow rate is increased to increase the temperature, the cold-water flow rate must be decreased to maintain the same total flow rate. The measurement signals are continuous, but the manipulated variable changes are likely to be discrete (unless your hands are continuously varying the valve positions).
     </p>
-    <h5>Feedback Control</h5>
     <p>
-        As the body feels the temperature changing, adjustments to one or both valves is made. As the body senses a flow rate or velocity change, one or both valves are adjusted.
+        Feedback Control: As the body feels the temperature changing, adjustments to one or both valves are made. As the body senses a flow rate or velocity change, one or both valves are adjusted.
     </p>
-    <h5>Feed-Forward Control</h5>
     <p>
-        If you hear the toilet flush, you move your body out of the stream to avoid the higher temperature that you anticipate. Notice that you are making a manipulated variable change (moving your body) before the effect of an output (temperature or flow rate) change is actually detected.
+        Feed-Forward Control: If you hear the toilet flush, you move your body out of the stream to avoid the higher temperature that you anticipate. Notice that you are making a manipulated variable change (moving your body) before the effect of an output (temperature or flow rate) change is actually detected.
     </p>
     <div class="figure">
         <img src="process_control/chapter_1/img/ch01fig11.PNG" alt="Process schematic for taking a shower.">
