@@ -76,29 +76,31 @@
         <li>Control structure—the controllers can be feedback or feed-forward in nature</li>
     </ol>
      <p>Here we discuss each of the steps in formulating a control problem in more detail.</p>
-    <p>
-        <b>1.</b> The first step of developing a control strategy is to formulate the control objective(s). A chemical-process operating unit often consists of several unit operations. The control of an operating unit is generally reduced to considering the control of each unit operation separately. Even so, each unit operation may have multiple, sometimes conflicting objectives, so the development of control objectives is not a trivial problem.
-    </p>
-    <p>
-        <b>2.</b> Input variables can be classified as manipulated or disturbance variables. A manipulated input is one that can be adjusted by the control system (or process operator). A disturbance input is a variable that affects the process outputs but that cannot be adjusted by the control system. Inputs may change continuously or at discrete intervals of time.
-    </p>
-    <p>
-        <b>3.</b> Output variables can be classified as measured or unmeasured variables. Measurements may be made continuously or at discrete intervals of time.
-    </p>
-    <p>
-        <b>4.</b>  Any process has certain operating constraints, which are classified as hard or soft. An example of a hard constraint is a minimum or maximum flow rate—a valve operates between the extremes of fully closed or fully open. An example of a soft constraint is a product composition—it may be desirable to specify a composition between certain values to sell a product, but it is possible to violate this specification without posing a safety or environmental hazard.
-    </p>
-    <p>
-       <b>5.</b> Operating characteristics are usually classified as continuous, batch, or semicontinuous (semibatch). Continuous processes operate for long periods of time under relatively constant operating conditions before being "shut down" for cleaning, catalyst regeneration, and so forth. For example, some processes in the oil-refining industry operate for 18 months between shutdowns. Batch processes are dynamic in nature—that is, they generally operate for a short period of time and the operating conditions may vary quite a bit during that period of time. Example batch processes include beer or wine fermentation, as well as many specialty chemical processes. For a batch reactor, an initial charge is made to the reactor, and conditions (temperature, pressure) are varied to produce a desired product at the end of the batch time. A typical semibatch process may have an initial charge to the reactor, but feed components may be added to the reactor during the course of the batch run.
-    </p>
-    <p>
+    <ol>
+    <li>
+        The first step of developing a control strategy is to formulate the control objective(s). A chemical-process operating unit often consists of several unit operations. The control of an operating unit is generally reduced to considering the control of each unit operation separately. Even so, each unit operation may have multiple, sometimes conflicting objectives, so the development of control objectives is not a trivial problem.
+    </li>
+    <li>
+        Input variables can be classified as manipulated or disturbance variables. A manipulated input is one that can be adjusted by the control system (or process operator). A disturbance input is a variable that affects the process outputs but that cannot be adjusted by the control system. Inputs may change continuously or at discrete intervals of time.
+    </li>
+    <li>
+        Output variables can be classified as measured or unmeasured variables. Measurements may be made continuously or at discrete intervals of time.
+    </li>
+    <li>
+        Any process has certain operating constraints, which are classified as hard or soft. An example of a hard constraint is a minimum or maximum flow rate—a valve operates between the extremes of fully closed or fully open. An example of a soft constraint is a product composition—it may be desirable to specify a composition between certain values to sell a product, but it is possible to violate this specification without posing a safety or environmental hazard.
+    </li>
+    <li>
+        Operating characteristics are usually classified as continuous, batch, or semicontinuous (semibatch). Continuous processes operate for long periods of time under relatively constant operating conditions before being "shut down" for cleaning, catalyst regeneration, and so forth. For example, some processes in the oil-refining industry operate for 18 months between shutdowns. Batch processes are dynamic in nature—that is, they generally operate for a short period of time and the operating conditions may vary quite a bit during that period of time. Example batch processes include beer or wine fermentation, as well as many specialty chemical processes. For a batch reactor, an initial charge is made to the reactor, and conditions (temperature, pressure) are varied to produce a desired product at the end of the batch time. A typical semibatch process may have an initial charge to the reactor, but feed components may be added to the reactor during the course of the batch run.
+        <br>
         Another important consideration is the dominant timescale of a process. For continuous processes this is very often related to the residence time of the vessel. For example, a vessel with a liquid volume of 100 liters and a flow rate of 10 liters/minute would have a residence time of 10 minutes; that is, on the average, an element of fluid is retained in the vessel for 10 minutes.
-    </p>
-    <p>
-        <b>6.</b> Safety, environmental, and economic considerations are all very important. In a sense, economics is the ultimate driving force—an unsafe or environmentally hazardous process will ultimately cost more to operate, through fines paid, insurance costs, and so forth. In many industries (petroleum refining, for example), it is important to minimize energy costs while producing products that meet certain specifications. Better process automation and control allows processes to operate closer to "optimum" conditions and to produce products where variability specifications are satisfied.The concept of "fail-safe" is always important in the selection of instrumentation. For example, a control valve needs an energy source to move the valve stem and change the flow; most often this is a pneumatic signal (usually 3–15 psig). If the signal is lost, then the valve stem will go to the 3-psig limit. If the valve is air-to-open, then the loss of instrument air will cause the valve to close; this is known as a fail-closed valve. If, on the other hand, a valve is air-to-close, when instrument air is lost the valve will go to its fully open state; this is known as a fail-open valve.    </p>
-    <p>
-        <b>7.</b> The two standard control types are feed forward and feedback. A feed-forward controller measures the disturbance variable and sends this value to a controller, which adjusts the manipulated variable. A feedback control system measures the output variable, compares that value to the desired output value, and uses this information to adjust the manipulated variable. For the first part of this textbook, we emphasize feedback control of single-input (manipulated) and single-output (measured) systems. Determining the feedback control structure for these systems consists of deciding which manipulated variable will be adjusted to control which measured variable. The desired value of the measured process output is called the setpoint.
-    </p>
+    </li>
+    <li>
+        Safety, environmental, and economic considerations are all very important. In a sense, economics is the ultimate driving force—an unsafe or environmentally hazardous process will ultimately cost more to operate, through fines paid, insurance costs, and so forth. In many industries (petroleum refining, for example), it is important to minimize energy costs while producing products that meet certain specifications. Better process automation and control allows processes to operate closer to "optimum" conditions and to produce products where variability specifications are satisfied. The concept of "fail-safe" is always important in the selection of instrumentation. For example, a control valve needs an energy source to move the valve stem and change the flow; most often this is a pneumatic signal (usually 3–15 psig). If the signal is lost, then the valve stem will go to the 3-psig limit. If the valve is air-to-open, then the loss of instrument air will cause the valve to close; this is known as a fail-closed valve. If, on the other hand, a valve is air-to-close, when instrument air is lost the valve will go to its fully open state; this is known as a fail-open valve.
+    </li>
+    <li>
+        The two standard control types are feed forward and feedback. A feed-forward controller measures the disturbance variable and sends this value to a controller, which adjusts the manipulated variable. A feedback control system measures the output variable, compares that value to the desired output value, and uses this information to adjust the manipulated variable. For the first part of this textbook, we emphasize feedback control of single-input (manipulated) and single-output (measured) systems. Determining the feedback control structure for these systems consists of deciding which manipulated variable will be adjusted to control which measured variable. The desired value of the measured process output is called the setpoint.
+    </li>
+    </ol>
     <p>
         A particularly important concept used in control system design is process gain. The process gain is the sensitivity of a process output to a change in the process input. If an increase in a process input leads to an increase in the process output, this is known as a positive gain. If, on the other hand, an increase in the process input leads to a decrease in the process output, this is known as a negative gain. The magnitude of the process gain is also important. For example, a change in power (input) of 0.5 kW to a laboratory-scale heater may lead to a fluid temperature (output) change of 10°C; this is a process gain (change in output/change in input) of 20°C/kW. The same input power change of 0.5 kW to a larger scale heater may only yield an output change of 0.5°C, corresponding to a process gain of 1°C/kW.
     </p>
