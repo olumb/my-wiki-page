@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.4 Control Textbooks and Journals</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1 {
+            color: #003366;
+        }
+        h2 {
+            color: #00509e;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 20px;
+            list-style-type: disc;
+        }
+    </style>
+</head>
+<body>
+    <h1>1.4 Control Textbooks and Journals</h1>
+    <p>
+        There are a large number of undergraduate control textbooks that focus on control-system design and theory. The following books include an introduction to process modeling and dynamics, in addition to control system design.
+    </p>
+    <h2>Textbooks</h2>
+    <ul>
+        <li>Coughanowr, D.R., <i>Process Systems Analysis and Control</i>, 2nd ed., McGraw-Hill, New York (1991).</li>
+        <li>Luyben, M.L., and W.L. Luyben, <i>Essentials of Process Control</i>, McGraw-Hill, New York (1997).</li>
+        <li>Luyben, W.L., <i>Process Modeling Simulation and Control for Chemical Engineers</i>, 2nd ed., McGraw-Hill, New York (1990).</li>
+        <li>Marlin, T.E., <i>Process Control: Designing Processes and Control Systems for Dynamic Performance</i>, 2nd ed., McGraw-Hill, New York (2000).</li>
+        <li>Ogunnaike, B.A., and W.H. Ray, <i>Process Dynamics, Modeling and Control</i>, Oxford, New York (1994).</li>
+        <li>Riggs, J.B., <i>Chemical Process Control</i>, Ferret Publishing, Lubbock, Texas (1999).</li>
+        <li>Seborg, D.E., T.F. Edgar, and D.A. Mellichamp, <i>Process Dynamics and Control</i>, Wiley, New York (1989).</li>
+        <li>Smith, C.A., and A.B. Corripio, <i>Principles and Practice of Automatic Process Control</i>, 2nd ed., Wiley, New York (1997).</li>
+        <li>Stephanopoulos, G., <i>Chemical Process Control</i>, Prentice Hall, Englewood Cliffs, NJ (1984).</li>
+        <li>Svrcek, W.Y., D.P. Mahoney, and B.R. Young, <i>A Real-Time Approach to Process Control</i>, Wiley, Chichester (2000).</li>
+    </ul>
+
+    <h2>Applied Books</h2>
+    <ul>
+        <li>Levine, W.S. (ed.), <i>The Control Handbook</i>, CRC Press, Boca Raton, FL (1996).</li>
+        <li>Liptak, B.G., and K.Venczel (eds.), <i>Instrument Engineers Handbook, Process Control Volume</i>, Chilton Book Company, Radnor, PA (1985).</li>
+        <li>Luyben, W.L., B.D. Tyreus, and M.L. Luyben, <i>Plantwide Process Control</i>, McGraw-Hill, New York (1999).</li>
+        <li>Schork, F.J., Deshpande, P.B., and K.W. Leffew, <i>Control of Polymerization Reactors</i>, Marcel Dekker, New York (1993).</li>
+        <li>Shinskey, F.G., <i>Distillation Control</i>, McGraw-Hill, New York (1977).</li>
+        <li>Shunta, J.P., <i>Achieving World Class Manufacturing Through Process Control</i>, Prentice Hall, Upper Saddle River, NJ (1995).</li
