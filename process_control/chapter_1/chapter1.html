@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.1 Introduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 2em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-top: 15px;
+        }
+
+        p {
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        ol {
+            margin: 10px 0 20px 20px;
+        }
+
+        ol li {
+            margin: 5px 0;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+        }
+
+        .figure {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .figure-caption {
+            font-size: 0.9em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>1.1 Introduction</h1>
+    <p>
+        Process engineers are often responsible for the operation of chemical processes. As these processes become larger scale and/or more complex, the role of process automation becomes more and more important. The objective of this textbook is to teach process engineers how to design and tune feedback controllers for the automated operation of chemical processes.
+    </p>
+    <div class="figure">
+        <img src="process_control/chapter_1/img/1.PNG" alt="Conceptual process input/output block diagram">
+        <p class="figure-caption">Figure 1-1. Conceptual process input/output block diagram.</p>
+    </div>
+
+    <h2>The development of a control strategy</h2>
+    <ol>
+        <li><b>Control objective(s):</b> Formulating objectives for control.</li>
+        <li><b>Input variables:</b> Classify as manipulated or disturbance variables.</li>
+        <li><b>Output variables:</b> Classify as measured or unmeasured variables.</li>
+        <li><b>Constraints:</b> Define as hard or soft constraints.</li>
+        <li><b>Operating characteristics:</b> Define as continuous, batch, or semicontinuous.</li>
+        <li><b>Safety and economic considerations:</b> Address these aspects during design.</li>
+        <li><b>Control structure:</b> Define feedback or feed-forward strategies.</li>
+    </ol>
+
+    <h2>Example 1.1: Surge Tank</h2>
+    <div class="figure">
+        <img src="process_control/chapter_1/img/2.PNG" alt="Tank level problem">
+        <p class="figure-caption">Figure 1-2. Tank level problem.</p>
+    </div>
+
+    <h2>Feedback Control</h2>
+    <h3>Scenario 1</h3>
+    <div class="figure">
+        <img src="process_control/chapter_1/img/3.PNG" alt="Feedback control strategy 1">
+        <p class="figure-caption">Figure 1-3. Feedback control strategy 1: The level is measured, and the inlet flow rate is manipulated.</p>
+    </div>
+
+    <h3>Scenario 2</h3>
+    <div class="figure">
+        <img src="process_control/chapter_1/img/4.PNG" alt="Feedback control strategy 2">
+        <p class="figure-caption">Figure 1-4. Feedback control strategy 2: The outlet flow rate is manipulated.</p>
+    </div>
+
+    <div class="figure">
+        <img src="process_control/chapter_1/img/5.PNG" alt="Feedback control schematic">
+        <p class="figure-caption">Figure 1-5. Feedback control schematic for scenario 1.</p>
+    </div>
+
+    <div class="figure">
+        <img src="process_control/chapter_1/img/6.PNG" alt="Feedback control schematic">
+        <p class="figure-caption">Figure 1-6. Feedback control schematic for scenario 2.</p>
+    </div>
+
+    <h2>Feed-Forward Control</h2>
+    <div class="figure">
+        <img src="process_control/chapter_1/img/7.PNG" alt="Feed-forward control strategy">
+        <p class="figure-caption">Figure 1-7. Feed-forward control strategy: The inlet flow rate is measured, and the outlet flow rate is manipulated.</p>
+    </div>
+
+    <div class="figure">
+        <img src="process_control/chapter_1/img/8.PNG" alt="Feed-forward schematic block diagram">
+        <p class="figure-caption">Figure 1-8. Feed-forward schematic block diagram.</p>
+    </div>
+
+    <div class="figure">
+        <img src="process_control/chapter_1/img/9.PNG" alt="Feed-forward/feedback control strategy">
+        <p class="figure-caption">Figure 1-9. Feed-forward/feedback control strategy: Combines feed-forward and feedback actions.</p>
+    </div>
+
+    <div class="figure">
+        <img src="process_control/chapter_1/img/10.PNG" alt="Feed-forward/feedback schematic">
+        <p class="figure-caption">Figure 1-10. Feed-forward/feedback schematic block diagram.</p>
+    </div>
+
+    <h2>Example 1.2: Taking a Shower</h2>
+    <div class="figure">
+        <img src="process_control/chapter_1/img/11.PNG" alt="Process schematic for taking a shower">
+        <p class="figure-caption">Figure 1-11. Process schematic for taking a shower.</p>
+    </div>
+</body>
+</html>
