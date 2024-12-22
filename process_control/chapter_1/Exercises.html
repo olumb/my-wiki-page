@@ -7,74 +7,228 @@
 </head>
 <body>
     <h1>Exercises</h1>
+    <h2>1: Discuss the following problems (a–g) in the context of control:</h2>
+    <ol>
+        <li>Identify control objectives;</li>
+        <li>Identify input variables and classify as (a) manipulated or (b) disturbance;</li>
+        <li>Identify output variables and classify these as (a) measured or (b) unmeasured;</li>
+        <li>Identify constraints and classify as (a) hard or (b) soft;</li>
+        <li>Identify operating characteristics and classify as (a) continuous, (b) batch, (c) semicontinuous (or semibatch);</li>
+        <li>Discuss safety, environmental, and economic considerations;</li>
+        <li>Discuss the types of control (feed forward or feedback).</li>
+    </ol>
+    <p>Measurements and manipulated variables can vary continuously or may be sampled discretely.</p>
+    <p>Select from the following:</p>
+    <ul>
+        <li>Driving a car</li>
+        <li>Choose one of your favorite activities (skiing, basketball, making a cappuccino, etc.)</li>
+        <li>A stirred tank heater</li>
+        <li>Beer fermentation</li>
+        <li>An activated sludge process</li>
+        <li>A household thermostat</li>
+        <li>Air traffic control</li>
+    </ul>
+
+        <h2>2: Literature Review</h2>
+    <p>The process control research literature can be challenging to read, with unique notations and rigorous mathematical analyses. Find a paper from one of the magazines or journals listed in Section 1.4 that you would like to understand by the time you have completed this textbook. You will find many articles to choose from, so use some of the following criteria for your selection:</p>
+    <ul>
+        <li>The process is interesting to you (do not choose mainly a theory paper)</li>
+        <li>The modeling equations and parameters are in the paper (make certain the equations are ordinary differential equations and not partial differential equations)</li>
+        <li>There are plots that you can verify (eventually) through simulation (the plots should be based on simulation results)</li>
+        <li>The control algorithm is clearly written</li>
+        <li>The objectives of the paper are reasonably clear to you</li>
+    </ul>
+    <p>Provide the following:</p>
+    <ul>
+        <li><strong>i.</strong> A short (one paragraph) summary of the overall objectives of the paper; why are you interested in the paper?</li>
+        <li><strong>ii.</strong> A short list of words and concepts in the paper that are familiar to you.</li>
+    </ul>
+    <p>Suggested Topics (choose one):</p>
+    <ul>
+        <li>Fluidized catalytic cracking unit (FCCU)— petroleum refining</li>
+        <li>Reactive ion etching— semiconductor manufacturing</li>
+        <li>Rotary lime kiln— pulp and paper manufacturing</li>
+        <li>Continuous drug infusion— biomedical engineering and anesthesia</li>
+        <li>Anaerobic digester— waste treatment</li>
+        <li>Distillation— petrochemical and many other industries</li>
+        <li>Polymerization reactor— plastics</li>
+        <li>pH— waste treatment</li>
+        <li>Beer production— food and beverage</li>
+        <li>Paper machine headbox— pulp and paper manufacturing</li>
+        <li>Batch chemical reactor— pharmaceutical production</li>
+    </ul>
+
+    <h2>3. Instrumentation Search</h2>
+    <p>
+        Select one of the following measurement devices and use Internet resources to learn more about it. Determine what types of signals are input to or output from the device. For flow meters, what range of flow rates can be handled by a particular flow meter model?
+    </p>
+    <ul>
+        <li>Vortex-shedding flow meters</li>
+        <li>Orifice-plate flow meters</li>
+        <li>Mass flow meters</li>
+        <li>Thermocouple-based temperature measurements</li>
+        <li>Differential pressure (delta P) measurements</li>
+        <li>Control valves</li>
+        <li>pH</li>
+    </ul>
+
+
+    <h2>4. Module 1: Introduction to MATLAB</h2>
+    <p>
+        Work through the <strong>Module 1: Introduction to MATLAB</strong>.
+    </p>
+
+    <h2>5. Process Furnace Control</h2>
+    <p>
+        A process furnace heats a process stream from near ambient temperature to a desired temperature of 300°C. The process stream outlet temperature is regulated by manipulating the flow rate of fuel gas to the furnace, as shown below.
+    </p>
+    <div class="figure">
+        <img src="my-wiki-page/process_control/chapter_1/img/01fig12a.png" alt="Process Furnace Diagram">
+        <p class="figure-caption">Figure: Process Furnace Control Strategy</p>
+    </div>
+    <ol>
+        <li>Discuss the objectives of this control strategy.</li>
+        <li>What is the measured output?</li>
+        <li>What is the manipulated input?</li>
+        <li>What are possible disturbances?</li>
+        <li>Is this a continuous or batch process?</li>
+        <li>Is this a feed-forward or feedback controller?</li>
+        <li>Should the control valve fail-open or fail-closed? For the strategy you chose, is the valve gain positive or negative? Why?</li>
+        <li>Discuss safety, environmental, and economic issues.</li>
+        <li>Draw the control block schematic diagram and label all signals and blocks on the diagram.</li>
+    </ol>
+
+    <h2>6. Fluidized Catalytic Cracking Unit (FCCU)</h2>
+    <p>
+        A fluidized catalytic cracking unit (FCCU) produces a significant portion of the gasoline produced by a typical petroleum refinery. A typical FCCU processes 30,000 Bbl/day (1 Bbl = 42 gallons) of heavy gas oil from a crude oil distillation unit, producing roughly 15,000 Bbl/day of gasoline, along with streams of other components. The value of gasoline alone produced by this unit is on the order of $500,000/day, so any improvement in yield and energy consumption owing to improved control can have a significant economic impact.
+    </p>
+    <p>
+        <strong>Question:</strong> A control system revamp for a 30,000 Bbl/day FCCU is estimated to cost $2 million. It is expected that the implementation of advanced control schemes will result in an economic increase of 2% in the value of products produced. Based on the value of gasoline alone, how many days will it take to pay back the control system investment?
+    </p>
+
+    <h2>7. Furnace Control System</h2>
+    <p>
+        Furnaces are often used to heat process streams to temperatures above 400°F. A typical fired furnace may have a heat duty of 100 x 10<sup>6</sup> Btu/hour, requiring roughly 1667 scfm (standard cubic feet per minute) of natural gas (methane has a fuel value of approximately 1000 Btu/scf). The cost of this fuel gas is on the order of $5/1000 scf, yielding an annual fuel cost of $4.4 million/year.
+    </p>
+    <p>
+        Excess combustion air is needed to assure complete combustion; however, too much excess air wastes energy (the heated air simply goes out the exhaust stack). Too little excess air leads to incomplete combustion, wasting energy and polluting the atmosphere with unburned hydrocarbons. It is important, then, to deliver an optimum amount of combustion air to the furnace. With the large flow rates and high temperatures involved, maintaining safe operation is also very important. The control system must be designed so that excess combustion air is maintained, no matter what is happening to the fuel gas flow rate. A fired furnace control system clearly needs to satisfy safety, environmental, and economic criteria.
+    </p>
+    <p>
+        <strong>Question:</strong> An advanced control scheme is estimated to save 2% in energy costs, for a fired furnace with a heat duty of 100 x 10<sup>6</sup> Btu/hour. If it is desired to have a 2-year payback period on this control system investment, what is the maximum investment allowable?
+    </p>
+
+    <h2>7. Furnace Control System</h2>
+    <p>
+        Furnaces are often used to heat process streams to temperatures above 400°F. A typical fired furnace may have a heat duty of 100 x 10<sup>6</sup> Btu/hour, requiring roughly 1667 scfm (standard cubic feet per minute) of natural gas (methane has a fuel value of approximately 1000 Btu/scf). The cost of this fuel gas is on the order of $5/1000 scf, yielding an annual fuel cost of $4.4 million/year.
+    </p>
+    <p>
+        Excess combustion air is needed to assure complete combustion; however, too much excess air wastes energy (the heated air simply goes out the exhaust stack). Too little excess air leads to incomplete combustion, wasting energy and polluting the atmosphere with unburned hydrocarbons. It is important, then, to deliver an optimum amount of combustion air to the furnace. With the large flow rates and high temperatures involved, maintaining safe operation is also very important. The control system must be designed so that excess combustion air is maintained, no matter what is happening to the fuel gas flow rate. A fired furnace control system clearly needs to satisfy safety, environmental, and economic criteria.
+    </p>
+    <p>
+        <strong>Question:</strong> An advanced control scheme is estimated to save 2% in energy costs, for a fired furnace with a heat duty of 100 x 10<sup>6</sup> Btu/hour. If it is desired to have a 2-year payback period on this control system investment, what is the maximum investment allowable?
+    </p>
+
+    <h2>9. Feedback and Feed-Forward Control in the Human Body</h2>
+    <p>
+        The human body is composed of many innate feedback and feed-forward control loops. For example, insulin is a hormone produced by the pancreas to regulate the blood glucose concentration. The pancreas in a type I (insulin-dependent) diabetic has lost the ability to produce significant insulin. An insulin-dependent diabetic must monitor their blood glucose (accurate blood glucose strips have been on the market for years) and provide insulin injections several times per day. It is particularly important to use knowledge of the meal characteristics to determine the amount of insulin necessary to compensate for the glucose.
+    </p>
     <ol>
         <li>
-            Discuss the following problems (a–g) in the context of control:
-            <ol type="i">
-                <li>Identify control objectives;</li>
-                <li>Identify input variables and classify as (a) manipulated or (b) disturbance;</li>
-                <li>Identify output variables and classify these as (a) measured or (b) unmeasured;</li>
-                <li>Identify constraints and classify as (a) hard or (b) soft;</li>
-                <li>Identify operating characteristics and classify as (a) continuous, (b) batch, (c) semicontinuous (or semibatch);</li>
-                <li>Discuss safety, environmental, and economic considerations;</li>
-                <li>Discuss the types of control (feed forward or feedback).</li>
-            </ol>
-            <p>Measurements and manipulated variables can vary continuously or may be sampled discretely.</p>
-            <p>Select from the following:</p>
+            <b>Discuss the actions taken by a type I diabetic in terms of the formulation of a control problem:</b> State the objectives and list all variables, including:
             <ul>
-                <li>a. Driving a car</li>
-                <li>b. Choose one of your favorite activities (skiing, basketball, making a cappuccino, etc.)</li>
-                <li>c. A stirred tank heater</li>
-                <li>d. Beer fermentation</li>
-                <li>e. An activated sludge process</li>
-                <li>f. A household thermostat</li>
-                <li>g. Air traffic control</li>
+                <li>Control objectives</li>
+                <li>Input variables (manipulated and disturbance)</li>
+                <li>Output variables (measured and unmeasured)</li>
+                <li>Constraints (hard and soft)</li>
+                <li>Safety, environmental, and economic considerations</li>
             </ul>
         </li>
         <li>
-            Literature Review. The process control research literature can be challenging to read, with unique notations and rigorous mathematical analyses. Find a paper from one of the magazines or journals listed in Section 1.4 that you would like to understand by the time you have completed this textbook. Use the following criteria for your selection:
+            <b>Automated Closed-Loop System:</b> It is desirable to form an automated closed-loop system, using:
             <ul>
-                <li>The process is interesting to you (do not choose mainly a theory paper)</li>
-                <li>The modeling equations and parameters are in the paper (make certain the equations are ordinary differential equations and not partial differential equations)</li>
-                <li>There are plots that you can verify (eventually) through simulation (the plots should be based on simulation results)</li>
-                <li>The control algorithm is clearly written</li>
-                <li>The objectives of the paper are reasonably clear to you</li>
+                <li>A continuous blood glucose measurement</li>
+                <li>A continuous insulin infusion pump</li>
             </ul>
-            <p>Provide the following:</p>
-            <ol type="i">
-                <li>A short (one paragraph) summary of the overall objectives of the paper; why are you interested in the paper?</li>
-                <li>A short list of words and concepts in the paper that are familiar to you.</li>
-            </ol>
-            <p>Suggested Topics (choose one):</p>
-            <ul>
-                <li>a. Fluidized catalytic cracking unit (FCCU)— petroleum refining</li>
-                <li>b. Reactive ion etching— semiconductor manufacturing</li>
-                <li>c. Rotary lime kiln— pulp and paper manufacturing</li>
-                <li>d. Continuous drug infusion— biomedical engineering and anesthesia</li>
-                <li>e. Anaerobic digester— waste treatment</li>
-                <li>f. Distillation— petrochemical and many other industries</li>
-                <li>g. Polymerization reactor— plastics</li>
-                <li>h. pH— waste treatment</li>
-                <li>i. Beer production— food and beverage</li>
-                <li>j. Paper machine headbox— pulp and paper manufacturing</li>
-                <li>k. Batch chemical reactor— pharmaceutical production</li>
-            </ul>
+            <p>
+                Draw a "process and instrumentation" diagram and the corresponding control block diagram for the system.
+            </p>
         </li>
-        <li>
-            Instrumentation Search. Select one of the following measurement devices and use Internet resources to learn more about it. Determine what types of signals are input to or output from the device. For flow meters, what range of flow rates can be handled by a particular flow meter model?
-            <ul>
-                <li>a. Vortex-shedding flow meters</li>
-                <li>b. Orifice-plate flow meters</li>
-                <li>c. Mass flow meters</li>
-                <li>d. Thermocouple-based temperature measurements</li>
-                <li>e. Differential pressure (delta P) measurements</li>
-                <li>f. Control valves</li>
-                <li>g. pH</li>
-            </ul>
-        </li>
-        <li>Work through the Module 1: Introduction to Matlab.</li>
-        <!-- Additional questions omitted for brevity -->
     </ol>
+
+    <h2>10. Heat Exchanger Control Instrumentation Diagrams</h2>
+    <p>
+        Consider the following three heat exchanger control instrumentation diagrams. For each diagram (a, b, and c), the objective is to maintain a desired cold stream outlet temperature. Since the cold stream exiting the exchanger is fed to a reactor, it is important that the stream temperature never be substantially higher than the setpoint value. Answer the questions for each strategy, and provide an overall discussion in part (d).
+    </p>
+    
+    <h3>a. Basic Cold Stream Temperature Control Strategy</h3>
+    <div class="figure">
+        <img src="my-wiki-page/process_control/chapter_1/img/01fig12b.png" alt="Basic Cold Stream Temperature Control Strategy">
+        <p class="figure-caption">Figure: Basic Cold Stream Temperature Control Strategy</p>
+    </div>
+    <ol>
+        <li>Is the process gain relating the manipulated flow rate to the measured temperature positive or negative?</li>
+        <li>Should the control valve be fail-open or fail-closed? Why?</li>
+    </ol>
+
+    <h3>b. Temperature Control Using Hot Stream Bypass Strategy</h3>
+    <div class="figure">
+        <img src="my-wiki-page/process_control/chapter_1/img/01fig12c.png" alt="Temperature Control Using Hot Stream Bypass Strategy">
+        <p class="figure-caption">Figure: Temperature Control Using Hot Stream Bypass Strategy</p>
+    </div>
+    <ol>
+        <li>Is the process gain relating the manipulated flow rate to the measured temperature positive or negative?</li>
+        <li>Should the control valve be fail-open or fail-closed? Why?</li>
+    </ol>
+
+    <h3>c. Temperature Control Using Cold Stream Bypass Strategy</h3>
+    <div class="figure">
+        <img src="my-wiki-page/process_control/chapter_1/img/01fig12d.png" alt="Temperature Control Using Cold Stream Bypass Strategy">
+        <p class="figure-caption">Figure: Temperature Control Using Cold Stream Bypass Strategy</p>
+    </div>
+    <ol>
+        <li>Is the process gain relating the manipulated flow rate to the measured temperature positive or negative?</li>
+        <li>Should the control valve be fail-open or fail-closed? Why?</li>
+    </ol>
+    
+    <h3>d. Overall Discussion</h3>
+    <p>
+        Compare the strategies above. Discuss their relative advantages and disadvantages in terms of safety, reliability, and control effectiveness.
+    </p>
+    <h2>11. Feedback Control in Surgery</h2>
+    <p>
+        During surgery, it is crucial for an anesthesiologist to regulate a patient's blood pressure to a desired value. This is achieved by adjusting the infusion rate of vasoactive drugs administered to the patient. Additionally, blood pressure is influenced by the level of anesthetic given to the patient.
+    </p>
+    <h3>Discussion</h3>
+    <p>
+        In the context of feedback control, the anesthesiologist acts as the controller in a manual control loop:
+    </p>
+    <ul>
+        <li>The blood pressure is the <strong>measured output</strong>.</li>
+        <li>The infusion rate of vasoactive drugs is the <strong>manipulated input</strong>.</li>
+        <li>The level of anesthetic is a <strong>disturbance</strong> affecting the system.</li>
+    </ul>
+    <p>
+        The anesthesiologist observes the blood pressure readings and adjusts the infusion rate of the vasoactive drugs to maintain the blood pressure at a desired level (setpoint). This is a classic example of a feedback control loop where the process output (blood pressure) is continuously monitored and compared with the setpoint to adjust the input (drug infusion rate).
+    </p>
+
+    <h3>Automated System Control Block Diagram</h3>
+    <p>
+        An automated system for regulating blood pressure could be implemented using a continuous blood pressure measurement device and an automated infusion pump for vasoactive drugs. The control block diagram for such a system is shown below:
+    </p>
+    <div class="figure">
+        <img src="my-wiki-page/process_control/chapter_1/img/11_control_block_diagram.png" alt="Control Block Diagram for Automated Blood Pressure Regulation">
+        <p class="figure-caption">Figure: Control Block Diagram for Automated Blood Pressure Regulation</p>
+    </div>
+    <p>
+        In this diagram:
+    </p>
+    <ul>
+        <li><strong>Sensor:</strong> Measures the patient's blood pressure continuously.</li>
+        <li><strong>Controller:</strong> Compares the measured blood pressure to the desired setpoint and calculates the required change in the infusion rate.</li>
+        <li><strong>Actuator:</strong> Adjusts the infusion pump to deliver the appropriate rate of vasoactive drugs.</li>
+    </ul>
+
+
 </body>
 </html>
 
