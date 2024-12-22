@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.3 Process Models and Dynamic Behavior</title>
+</head>
+<body>
+    <h1>1.3 Process Models and Dynamic Behavior</h1>
+    <p>
+        Thus far we have mentioned the term model a number of times, and you probably have a vague notion of what we mean by model. The following definition of a model is from the McGraw-Hill Dictionary of Scientific and Technical Terms:
+    </p>
+    <blockquote>
+        "A mathematical or physical system, obeying certain specified conditions, whose behavior is used to understand a physical, biological, or social system to which it is analogous in some way."
+    </blockquote>
+    <p>
+        In this textbook, model will be taken to mean mathematical model. More specifically, we develop process models. A working definition of process model is:
+    </p>
+    <blockquote>
+        A set of equations (including the necessary input data to solve the equations) that allows us to predict the behavior of a chemical process.
+    </blockquote>
+    <p>
+        Models play a very important role in control-system design. Models can be used to simulate expected process behavior with a proposed control system. Also, models are often "embedded" in the controller itself; in effect the controller can use a process model to anticipate the effect of a control action.
+    </p>
+    <p>
+        We can see from Example 1.1 that we at least need to know whether an increase in the flow rate will increase or decrease the tank level. For example, an increase in the inlet flow rate increases the tank level (positive gain), while an increase in the outlet flow rate leads to a decrease in the tank level (negative gain). In order to design a controller, then, we need to know whether an increase in the manipulated input increases or decreases the process output variable; that is, we need to know whether the process gain is positive or negative.
+    </p>
+    <h2>Example 1.3: Liquid Surge Vessel Model</h2>
+    <p>
+        In the development of a dynamic model, simplifying assumptions are often made. Also, the model requirements are a function of the end-use of the model. In this case, we are ultimately interested in designing a controller and in simulating control-system behavior. Since we have not covered control algorithms in depth, our objective here is to develop a model that relates the inputs (manipulated and disturbance) to measured outputs that we wish to regulate.
+    </p>
+    <p>
+        For this process, we first assume that the density is constant. The model we develop should allow us to determine how the volume of liquid in the vessel varies as a function of the inlet and outlet flow rates. We will list the state variables, parameters, and the input and output variables. We must also specify the required information to solve this problem (see Figure 1-2). The system is the liquid in the tank and the liquid surface is the top boundary of the system. The following notation is used in the modeling equations:
+    </p>
+    <ul>
+        <li><b>F<sub>1</sub></b> = inlet volumetric flow rate (volume/time)</li>
+        <li><b>F<sub>2</sub></b> = outlet volumetric flow rate</li>
+        <li><b>V</b> = volume of liquid in vessel</li>
+        <li><b>h</b> = height of liquid in vessel</li>
+        <li><b>ρ</b> = liquid density (mass/volume)</li>
+        <li><b>A</b> = cross-sectional area of vessel</li>
+    </ul>
+    <p>
+        Here we write the balance equations based on an instantaneous rate-of-change:
+    </p>
+    <figure>
+        <img src="process_control/chapter_1/img/01equ01.png" alt="Equation 1.1">
+        <figcaption>Equation 1.1</figcaption>
+    </figure>
+    <p>
+        where the total mass of fluid in the vessel is <i>Vρ</i>, the rate of change is <i>dVρ/dt</i>, and the density of the outlet stream is equal to the density of the vessel contents.
+    </p>
+    <figure>
+        <img src="process_control/chapter_1/img/01equ02.png" alt="Equation 1.2">
+        <figcaption>Equation 1.2</figcaption>
+    </figure>
+    <p>
+        Notice the implicit assumption that the density of fluid in the vessel does not depend on position (the perfect mixing assumption). This assumption allows an ordinary differential equation (ODE) formulation. We refer to any system that can be modeled by ODEs as lumped parameter systems.
+    </p>
+    <figure>
+        <img src="process_control/chapter_1/img/01equ03.png" alt="Equation 1.3">
+        <figcaption>Equation 1.3</figcaption>
+    </figure>
+    <p>
+        In order to solve this problem we must specify the inputs F<sub>1</sub>(t) and F<sub>2</sub>(t) and the initial condition V(0). Direct integration of Equation (1.3) yields:
+    </p>
+    <figure>
+        <img src="process_control/chapter_1/img/01equ04.png" alt="Equation 1.4">
+        <figcaption>Equation 1.4</figcaption>
+    </figure>
+    <p>
+        Further details can be added here as per your requirements.
+    </p>
+</body>
+</html>
